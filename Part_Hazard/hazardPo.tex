@@ -1,0 +1,53 @@
+\documentclass[12pt,a4paper,smallheadings]{scrreprt}
+
+% ------ PACKAGES
+\usepackage[dvips]{graphicx}
+\usepackage[english,italian]{babel}
+%\usepackage[colorlinks=true]{hyperref}
+\usepackage{natbib}
+\usepackage{marginnote}
+\usepackage[labelfont=bf]{caption}
+
+% ------ INFO
+\author{CNR-IDPA}
+\title{Calcolo della pericolosit\`a sismica lungo l'argine destro 
+del Po compreso tra i comuni di Ro (FE) e Boretto (RE)}
+
+% ------ DOCUMENT
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+% ------ CHAP
+\chapter*{Lista dei simboli e degli acronimi}
+\input{symbols.tex}
+
+% ------ CHAP
+\chapter*{Riassunto}
+\input{riassunto.tex}
+
+% ------ CHAP
+\chapter{Sismotettonica e modelli di sismicit\`a}
+\input{sismicita.tex}
+
+% ------ CHAP
+\chapter{Calcolo della pericolosit\`a: applicazione di metodi 
+   probabilistici classici}
+\input{metodiProbabilistici.tex}
+
+% ------ CHAP
+\chapter{Calcolo della pericolosit\`a: applicazione di metodi 
+   che integrano informazioni di sismicit\`a con informazioni
+   relative alla deformazione crostale}
+\input{metodiDeformazione.tex}
+
+% ------ CHAP
+\chapter{Definizione del moto di riferimento}
+\input{definizioneMotoRiferimento.tex}
+
+% ------ BIBLOGRAPHY
+\bibliographystyle{apalike}
+\bibliography{C:/Usr/Dat/tex/seismo,C:/Usr/Dat/tex/uncert}
+
+\end{document}

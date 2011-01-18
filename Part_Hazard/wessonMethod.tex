@@ -1,0 +1,58 @@
+%
+In the procedure proposed by \cite{wesson2009} the creation of the ERF follows the 
+classical approach.
+
+Using an ERF, for each rupture $Rup$ is possible to calculate the 
+probability that a given ground motion $U$ is in the interval $u_x\pm \Delta u$ 
+given an inter-event variability $\epsilon_{inter}$ (this corresponds to 
+equation 3 of \cite{wesson2009}): 
+%
+\begin{eqnarray}
+P(u_x-\Delta u\leq U<u_x+\Delta u|Rup,\epsilon_{inter}) & = &  
+	\Phi\bigg(\frac{(\ln (u_x-\Delta u)-\ln(u_0)}{\sigma_{intra}}\bigg) - \nonumber \\
+	& - & \Phi\bigg(\frac{(\ln (u_x+\Delta u)-\ln(u_0)}{\sigma_{intra}}\bigg) 
+\end{eqnarray}
+where $\ln(u_0)$ is the mean of the GMPE computed considering a value 
+$\epsilon_{intra}$ and a rupture $Rup$, (generally characterized by a geometry 
+and a magnitude) and $\Phi$ is the standard normal CDF. 
+  
+The next step is to calculate the PMF of losses for a given rupture. Given an asset, 
+the probability of suffering a loss value in the interval $[l-\Delta l, l+\Delta[$ 
+given a ground motion value in the interval $[u_x-\Delta u,u_x+\Delta u[$ (note that in this 
+case the distribution of ground motion $u$ will depend on $\epsilon_{intra}$) 
+corresponds to:
+%
+\begin{equation}
+\begin{array}{rl}
+P(l-\Delta l\leq L < & l-\Delta l|Rup,\epsilon_{inter}) = \\
+ 	\sum\limits_{x=0}^{\infty}  
+	& P(l-\Delta l\leq L < l-\Delta l|u_x+\Delta u\leq U<u_x+\Delta u) \\
+	& P(u_x-\Delta u\leq U<u_x+\Delta u|R,\epsilon_{inter})) \\
+\end{array}
+\end{equation}
+%
+If $P^i(L=l|Rup,\epsilon_{inter})$ corresponds to the conditional probability mass
+function describing the discrete probability of having a loss in the interval 
+$[l-\Delta l, l-\Delta[$ for the asset with index $i$, the probability of cumulated 
+losses to a portfolio can be computed as:
+\begin{equation}
+P_{CL}(CL=cl|M,\epsilon_{inter})=P^1(L=l|Rup,\epsilon_{inter})*\ldots*P^n(L=l|Rup,
+	\epsilon_{inter})
+\end{equation}
+where symbol $*$ stands for convolution. 
+
+Finally, the total probability of exceeding a given level of cumulated losses $cl$ 
+computed considering the contributions of all the ruptures occurring on all the 
+seismic sources considered is (note that this expression extends equation A10 of
+\cite{field2003}):  
+%
+\begin{equation}
+P(CL\geq cl)=1-\prod\limits_{i=1}^{n} 
+	\left( 
+		1-\sum\limits_{n=1}^{N(i)}
+		\sum\limits_{k=-3}^{3}
+			P(Rup_{i,n})P(CL\geq cl|Rup_{i,n},\epsilon_k)
+	\right)
+\end{equation}
+where $P(CL\geq cl|Rup_{i,n},\epsilon_k)$ can be simply derived from the PMF 
+$P_{CL}(CL=cl|M,\epsilon_{inter})$, $n$ is the number of seismic sources.

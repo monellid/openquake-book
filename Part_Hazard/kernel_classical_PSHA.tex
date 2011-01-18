@@ -1,0 +1,76 @@
+The way OpenQuake computes hazard based on the classical PSHA approach 
+\citep{cornell1968,mcguire2004} follows the methodology proposed by 
+\citet{field2003}. This methodology, has the distinctive property of performing
+the entire calculation using probabilities, as orginally proposed by 
+\citet{chiang1984}, instead of working with occurrence rates 
+\citep[see for instance][]{bender1987}. This has the clear advantage of decoupling 
+the creation of the probabilistic seismicity occurrence model (in the OpenSHA 
+terminology this is defined as the Earthquake Rupture Forecast) from the 
+assumption of a Poissonian temporal occurrence model. \citet{field2003} 
+demonstrated the congruence between the original PSHA formulation based on 
+occurrences and the methodology here adopted in the case of a Poissonian temporal 
+model. 
+
+From a more strict calculation perspective two, are the main steps accomplished:
+\begin{itemize}
+\item Creation of the probabilistic seismicity occurrence model, i.e. a discrete 
+distribution giving the probability of occurrence of each possible rupture 
+occurring on one of the seismic sources defined in the PSHA input model in a  
+given time span.  
+\item Calculation of hazard at the site by combining the probabilistic 
+occurrence model with a ground motion prediction equation (also Intensity 
+Measure Relationship in the OpenSHA jargon).
+\end{itemize}
+%
+% --------------------------------------------------------------------------------
+\section{Calculation kernel}
+Considering a single rupture $rup$ sof magnitude $m_i$ occurring on a given seismic 
+source, it's probability of occurrence in a given time span is: 
+\begin{equation}
+P(Rup) = P(n=1)\,P(M=m_i)\,P(Rup|m_i)
+\end{equation}
+where $P(n=1)$ is the probability of occurrence of one event in the given seismic
+source, $P(M=m_i)$ is the probability that given an occurrence this will have a 
+magnitude equal to $m_i$ and, $P(Rup|m_i)$ is the probability of rupture $Rup$
+given magnitude $m_i$ within the seismic source considered 
+%
+% --------------------------------------------------------------------------------
+\section{Hazard calculation: traditional formulation in terms of probabilities}
+Following \cite{field2003}, the traditional formulation in terms of probabilities:
+%
+\begin{equation}
+P(U\geq u)=1-\prod\limits_{i=1}^{l} 
+	\left[ 
+		\sum\limits_{s=0}^{+\infty}\left( 
+			P(S=s) \left( 
+				1-\sum\limits_{j=0}^{j(i)}
+				\sum\limits_{s=0}^{K(i,j)} \\
+					P(m_{i,j}) P(R_{i,j,k}|m_{i,j}) P(U\geq u|m_{i,j},R_{i,j,k}) 
+			\right)^{s}
+	\right)
+	\right] 
+\end{equation}
+where $l$ i the number of sources 
+
+If the probability of multiple occurrences is assumed to be negligible:
+%
+\begin{equation}
+P(X\geq x)=1-\prod\limits_{i=1}^{l} 
+	\left( 
+		1-\sum\limits_{n=1}^{N(i)}P(Rup_{i,n})P(X\geq x|Rup_{i,n})
+	\right)
+\end{equation}
+
+%  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsection{Example}
+In case of two punctual sources each one generating a single rupture, the 
+probability of exceedance of ground motion $u$ in a given site corresponds to:
+%
+\begin{eqnarray}
+P(U\geq u)=
+	1-
+	\biggl(& 
+		\bigl[ 1-P(Rup_{i,1})P(U\geq u|Rup_{i,1}) \bigr] \nonumber \\
+		& \bigl[ 1-P(Rup_{i,2})P(U\geq u|Rup_{i,2}) \bigr]
+	\,\biggr)
+\end{eqnarray}
