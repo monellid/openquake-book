@@ -1,0 +1,180 @@
+% ------------------------------------------------------------------------------
+% The OpenQuake Book
+% 
+%
+% Document distributed under the Common Creative License bla bla bla
+% ------------------------------------------------------------------------------
+\documentclass[12pt,a4paper,smallheadings]{scrbook}
+% --------------------------------------------------------------------- Packages
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{a4}
+\usepackage[dvips]{graphicx}
+% Solves problems with margin notes
+\usepackage{mparhack} 
+	\setlength{\marginparwidth}{1.1in}
+	\let\oldmarginpar\marginpar
+	\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedright\color{red01}
+	\footnotesize #1]%
+	{\raggedright\footnotesize #1}}
+% Colors
+\usepackage{color}
+	\definecolor{blue01}{rgb}{0,0,.5}
+	\definecolor{gray01}{rgb}{0.1,0.1,0.1}
+	\definecolor{red01}{rgb}{0.5,0.0,0.0}
+\usepackage[italian,english]{babel}
+%\usepackage[colorlinks=true]{hyperref}
+%\usepackage{makeindex} % Used to create the index
+%	\makeindex
+\usepackage[square,colon]{natbib} % Used to 
+\usepackage[labelfont=bf]{caption} % Used to reformat section typesetting
+\usepackage{scrpage2}
+	\lofoot[]{\includegraphics[width=2.0cm]{./Figures/openquake_logo1.eps}}
+	\refoot[]{\includegraphics[width=2.0cm]{./Figures/openquake_logo1.eps}}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Setting Fonts
+\renewcommand{\encodingdefault}{OT1}
+\renewcommand{\familydefault}{cmss}
+\renewcommand{\seriesdefault}{m}
+\renewcommand{\shapedefault}{up}
+% - - - - - - - - - - - - - - - - - - - - - - - - - -  Reformatting PART Titles
+\titleformat{\part}[display]
+{\filleft\normalfont\sffamily}
+{\textcolor{blue01}{\bfseries\large PART}\hspace{4pt}
+	\bfseries\Huge\textcolor{blue01}{\thepart}}
+{1pc}
+{\Huge\bfseries\textcolor{blue01}}
+[]
+% - - - - - - - - - - - - - - - - - - - - - - - - - Reformatting CHAPTER Titles
+% Titles: CHAPTER
+\titleformat{\chapter}
+	[display] % shape
+	{\filleft\normalfont\sffamily} % format
+	{\textcolor{blue01}{\bfseries\MakeUppercase{\chaptertitlename}} % label
+		\hspace{4pt}\Huge\bfseries\textcolor{blue01}{\thechapter}} 
+	{1pc} % sep
+	{\Huge\bfseries\textcolor{blue01}} % Before
+	[]
+% - - - - - - - - - - - - - - - - - - - - - - - - - Reformatting SECTION Titles
+% Titles: SECTION
+\titleformat{\section}
+	[hang] % shape
+	{\vspace{.8ex}\Large\bfseries\color{blue01}} % format 
+	{\textcolor{blue01}{\thesection.}} % label
+	{.5em} % sep
+	{} % before
+	[] % after
+% - - - - - - - - - - - - - - - - - - - - - - -  Reformatting SUBSECTION Titles
+% Titles: SUBSECTION
+\titleformat{\subsection}
+	[hang] % shape
+	{\vspace{.8ex}\large\bfseries\color{blue01}} % format 
+	{\textcolor{blue01}{\thesubsection.}} % label
+	{.5em} % sep
+	{} % before
+	[] % after
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+% Titles: SUBSUBSECTION
+\titleformat{\subsubsection}
+	[hang] % shape
+	{\vspace{.8ex}\normalfont\bfseries\color{blue01}} % format 
+	{} % label
+	{.5em} % sep
+	{} % before
+	[] % after
+% ------------------------------------------------------------------------------
+\uppertitleback{
+   \textbf{Authors:} \\
+   Helen Crowley$^1$, Leonardo Garrido, Damiano Monelli, Marco Pagani$^1$, 
+	Vitor Silva$^1$ \\ \hfill \\
+   \small
+   $^1$ GEM Foundation\\
+   via Ferrata, 1 \\ 
+   20133 Pavia \\
+   Italy \\
+   ($<$name.surname$>$@globalquakemodel.org)
+   \normalsize
+}  
+%
+% =============================================================== BEGIN DOCUMENT
+% -------------------------------------------------- Title and table of contents
+\begin{document}
+\begin{titlepage}
+	\titlehead{\emph{``OpenQuake: Shaken not stirred''}}
+	\title{ \textcolor{blue01}{\textsf{\bfseries\Huge The OpenQuake Book}}  }
+\end{titlepage}
+
+\pagestyle{scrheadings}
+\maketitle
+\tableofcontents
+%
+% --------------------------------------------------------- Symbols and acronyms
+\chapter*{Symbols and acronyms}
+	\input{./Part_Introduction/symbolsAcronyms.tex}
+% ==============================================================================
+% ------------------------------------------------------------------------- Part
+\part{Introduction}
+% ------------------------------------------------------------------------------
+\chapter{OpenQuake background}
+	\input{./Part_Introduction/introduction.tex}
+% ------------------------------------------------------------------------------
+\chapter{Brief desciption of OpenQuake IT aspects}
+	\input{./Part_Introduction/it.tex}
+% ==============================================================================
+% ------------------------------------------------------------------------- Part
+\part{Hazard}
+% ------------------------------------------------------------------------------
+\chapter{Introduction}
+	\input{./Part_Hazard/introduction.tex}
+% ------------------------------------------------------------------------------
+\chapter{OpenQuake input description}
+	\input{./Part_Hazard/unifiedSeismicSourceDescription.tex}
+% ------------------------------------------------------------------------------
+\chapter{Earthquake Rupture Forecast calculator}
+	\input{./Part_Hazard/eqk_Rupture_Forecast_Calculator.tex}
+% ------------------------------------------------------------------------------
+\chapter{Classical PSHA calculator}
+	\input{./Part_Hazard/kernel_classical_PSHA.tex}
+% ------------------------------------------------------------------------------
+\chapter{Stochastic event set and ground motion field calculators}
+	\input{./Part_Hazard/kernel_Stochastic_PSHA.tex}
+% ------------------------------------------------------------------------------
+\chapter{Wesson et al. [2009] risk calculation implementation}
+	\input{./Part_Hazard/wessonMethod.tex}
+% ==============================================================================
+% ------------------------------------------------------------------------- Part
+\part{Risk}
+\chapter{Deterministic event based calculator}
+	\input{./Part_Risk/deterministic_Event_Based.tex}
+% ------------------------------------------------------------------------------
+\chapter{Probabilistic classical PSHA based calculator}
+	\input{./Part_Risk/probabilistic_Classical_PSHA_Based.tex}
+% ------------------------------------------------------------------------------
+\chapter{Probabilistic event based calculator}
+	\input{./Part_Risk/probabilistic_Event_Based.tex}
+% ==============================================================================
+% ------------------------------------------------------------------------- Part
+\part{Socio-Economic Impact Assessment}
+	\input{./Part_SEIA/introduction.tex}
+% ==============================================================================
+% ------------------------------------------------------------------------- Part
+\part{Modeller's Toolkit}
+% ------------------------------------------------------------------------------
+\chapter{Introduction}
+	\input{./Part_Modellers_Toolkit/introduction.tex}
+% ------------------------------------------------------------------------------
+\chapter{Input visualization and preparation}
+	\input{./Part_Modellers_Toolkit/input.tex}
+% ==============================================================================
+% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------- Part
+\part{Appendixes}
+\appendix
+\chapter{Example of OpenQuake hazard calculation configuration file}
+	\input{./Part_Appendix/appendixHazardInputExample.tex}
+% ------------------------------------------------------------------------------
+\chapter{Example of OpenQuake risk calculation configuration file}
+% ==============================================================================
+% ----------------------------------------------------------------- Bibliography
+\bibliographystyle{apalike}
+\bibliography{/Users/marcop/seismology.bib}
+\end{document}
