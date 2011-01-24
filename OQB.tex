@@ -6,6 +6,16 @@
 % ------------------------------------------------------------------------------
 \documentclass[12pt,a4paper,smallheadings]{scrbook}
 % --------------------------------------------------------------------- Packages
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+%
+\usepackage{pst-tree}
+\usepackage{pstricks}
+
+\usepackage{fancyvrb}
+
+\usepackage{pbox}
+
 \usepackage{amsmath}
 \usepackage{titlesec}
 \usepackage{a4}
@@ -64,7 +74,7 @@
 	{} % before
 	[] % after
 % - - - - - - - - - - - - - - - - - - - - - - -  Reformatting SUBSECTION Titles
-% Titles: SUBSECTION
+% Title: SUBSECTION
 \titleformat{\subsection}
 	[hang] % shape
 	{\vspace{.8ex}\large\bfseries\color{blue01}} % format 
@@ -72,15 +82,25 @@
 	{.5em} % sep
 	{} % before
 	[] % after
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-% Titles: SUBSUBSECTION
+%  - - - - - - - - - - - - - - - - - - - - -  Reformatting SUBSUBSECTION Titles 
+% Title: SUBSUBSECTION
 \titleformat{\subsubsection}
+	[hang] % shape
+	{\vspace{.8ex}\normalfont\bfseries\color{blue01}} % format 
+	{\textcolor{blue01}{\thesubsubsection.}} % label
+	{.5em} % sep
+	{} % before
+	[] % after
+% - - - - - - - - - - - - - - - - - - - - - - -  Reformatting PARAGRAPH Titles 
+% Title: PARAGRAPH
+\titleformat{\paragraph}
 	[hang] % shape
 	{\vspace{.8ex}\normalfont\bfseries\color{blue01}} % format 
 	{} % label
 	{.5em} % sep
 	{} % before
 	[] % after
+%
 % ------------------------------------------------------------------------------
 \uppertitleback{
    \textbf{Authors:} \\
@@ -193,5 +213,7 @@
 % ==============================================================================
 % ----------------------------------------------------------------- Bibliography
 \bibliographystyle{apalike}
-\bibliography{/Users/marcop/seismology.bib}
+\bibliography{./Bibliography/hazard.bib}
+\bibliography{./Bibliography/risk.bib}
+\bibliography{./Bibliography/sei.bib}
 \end{document}

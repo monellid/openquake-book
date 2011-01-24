@@ -1,15 +1,15 @@
-The way OpenQuake computes hazard based on the classical PSHA approach 
-\citep{cornell1968,mcguire2004} follows the methodology proposed by 
-\citet{field2003}. This methodology, has the distinctive property of performing
+OpenQuake computes hazard based on the classical PSHA approach 
+\citep{cornell1968,mcguire2004} following the methodology proposed by 
+\citet{field2003}. This methodology has the distinctive property of performing
 the entire calculation using probabilities, as orginally proposed by 
-\citet{chiang1984}, instead of working with occurrence rates 
-\citep[see for instance][]{bender1987}. This has the clear advantage of decoupling 
-the creation of the probabilistic seismicity occurrence model (in the OpenSHA 
-terminology this is defined as the Earthquake Rupture Forecast) from the 
-assumption of a Poissonian temporal occurrence model. \citet{field2003} 
-demonstrated the congruence between the original PSHA formulation based on 
-occurrences and the methodology here adopted in the case of a Poissonian temporal 
-model. 
+\citet{chiang1984}, instead of working with occurrence rates like in common
+PSHA codes \citep[see for instance][]{bender1987}. 
+This has the clear advantage of decoupling the creation of the probabilistic 
+seismicity occurrence model (in the OpenSHA terminology this is defined as the 
+Earthquake Rupture Forecast) from the assumption of a Poissonian temporal 
+occurrence model. \citet{field2003} demonstrated the congruence between the 
+original PSHA formulation based on occurrences and the methodology here adopted 
+in the case of a Poissonian temporal model. 
 
 From a more strict calculation perspective two, are the main steps accomplished:
 \begin{itemize}
@@ -39,15 +39,16 @@ given magnitude $m_i$ within the seismic source considered
 Following \cite{field2003}, the traditional formulation in terms of probabilities:
 %
 \begin{equation}
-P(U\geq u)=1-\prod\limits_{i=1}^{l} 
-	\left[ 
-		\sum\limits_{s=0}^{+\infty}\left( 
-			P(S=s) \left( 
-				1-\sum\limits_{j=0}^{j(i)}
-				\sum\limits_{s=0}^{K(i,j)} \\
-					P(m_{i,j}) P(R_{i,j,k}|m_{i,j}) P(U\geq u|m_{i,j},R_{i,j,k}) 
-			\right)^{s}
+P(U\geq u)= 
+	1-\prod\limits_{i=1}^{l} 
+	\left[\sum\limits_{s=0}^{+\infty}
+	\left(P(S=s) 
+	\left(
+		1-\sum\limits_{j=0}^{j(i)}\sum\limits_{s=0}^{K(i,j)} 
+		P(m_{i,j}) 
+		P(R_{i,j,k}|m_{i,j}) P(U\geq u|m_{i,j},R_{i,j,k})
 	\right)
+	\right)^{s}
 	\right] 
 \end{equation}
 where $l$ i the number of sources 
