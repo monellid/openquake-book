@@ -1,24 +1,29 @@
-The calculation of stochastic event sets and corresponding ground motion fields
-is a 
+The calculation of stochastic event sets and the corresponding ground motion fields is a methodology tightly connected with a specific seismic risk analysis of common use within the insurance and re-insurance industry (CITATION). 
+%
+OpenQuake given an Earthquake Rupture Forecast can generate a number of seismicity histories, each one representing a possible realisation of the seismicity that the sources included in a Source Model can generate within a given time span (fixed by the user).
+% 
+The 
+
+Each rupture in a seismicity history is successively associated with a ground motion field, an object describing the spatial distribution of a scalar parameter representative of the intensity of shaking (e.g. PGA or Spectral Acceleration). OpenQuake has the capability to generate 
 %
 % ------------------------------------------------------------------------------
-\section{Sampling the Earthquake Rupture Forecast}
-%
-%  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-\subsection{Sampling the Earthquake Rupture Forecast}
-The sampling of the earthquake rupture forecast results from the following 
-procedure:
-\begin{enumerate} 
-\item Sample a source
-\item Sample a magnitude value (among a discrete set)
-\item Sample a time interval  
-\end{enumerate} 
-%
-%  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-\subsubsection{Inverse transform method}
+\section{Stochastic Event Set Calculator}
 The Inverse Trasform CITATION is a methodology widely used to randomly sample 
 a discrete probabilistic distribution 
+
 %
 % ------------------------------------------------------------------------------
-\section{Generating spatially correlated ground motion fields} 
-We generate spatially correlated ground motion fields using the 
+\section{Ground Motion Fields calculator} 
+We generate ground motion fields using the 
+%
+%  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsection{Spatially correlated ground motion fields}
+The genearation of spatially correlated ground motion fields is based on the work of \citet{jayaram2009} where they propose a model - based on a semivarigram - for describing 
+\begin{equation}
+\gamma(h) = a \left[1-\exp\left(-\frac{3h}{b}\right)\right]
+\end{equation}
+
+%
+% ------------------------------------------------------------------------------
+\section{Stochastic PSHA calculator} 
+The OpeQuake stochastic PSHA calculator provides a way to check the consistency between the result provided by a classical PSHA calculator and the results that can be obtained by a number of ground motion fields, representative of the 

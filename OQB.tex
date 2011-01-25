@@ -6,6 +6,16 @@
 % ------------------------------------------------------------------------------
 \documentclass[12pt,a4paper,smallheadings]{scrbook}
 % --------------------------------------------------------------------- Packages
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+%
+\usepackage{pst-tree}
+\usepackage{pstricks}
+
+\usepackage{fancyvrb}
+
+\usepackage{pbox}
+
 \usepackage{amsmath}
 \usepackage{titlesec}
 \usepackage{a4}
@@ -64,7 +74,7 @@
 	{} % before
 	[] % after
 % - - - - - - - - - - - - - - - - - - - - - - -  Reformatting SUBSECTION Titles
-% Titles: SUBSECTION
+% Title: SUBSECTION
 \titleformat{\subsection}
 	[hang] % shape
 	{\vspace{.8ex}\large\bfseries\color{blue01}} % format 
@@ -72,26 +82,49 @@
 	{.5em} % sep
 	{} % before
 	[] % after
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-% Titles: SUBSUBSECTION
+%  - - - - - - - - - - - - - - - - - - - - -  Reformatting SUBSUBSECTION Titles 
+% Title: SUBSUBSECTION
 \titleformat{\subsubsection}
+	[hang] % shape
+	{\vspace{.8ex}\normalfont\bfseries\color{blue01}} % format 
+	{\textcolor{blue01}{\thesubsubsection.}} % label
+	{.5em} % sep
+	{} % before
+	[] % after
+% - - - - - - - - - - - - - - - - - - - - - - -  Reformatting PARAGRAPH Titles 
+% Title: PARAGRAPH
+\titleformat{\paragraph}
 	[hang] % shape
 	{\vspace{.8ex}\normalfont\bfseries\color{blue01}} % format 
 	{} % label
 	{.5em} % sep
 	{} % before
 	[] % after
+%
 % ------------------------------------------------------------------------------
 \uppertitleback{
    \textbf{Authors:} \\
-   Helen Crowley$^1$, Leonardo Garrido, Damiano Monelli, Marco Pagani$^1$, 
-	Vitor Silva$^1$ \\ \hfill \\
+   Helen Crowley$^1$, Leonardo Garrido$^1$, Damiano Monelli$^3$, 
+   Marco Pagani$^1$, Vitor Silva$^1$, Graeme Weatherill$^2$ \\ \hfill \\
    \small
    $^1$ GEM Foundation\\
    via Ferrata, 1 \\ 
    20133 Pavia \\
    Italy \\
-   ($<$name.surname$>$@globalquakemodel.org)
+   \\
+   $^2$ GEM Model Facility\\
+   via Ferrata, 1 \\ 
+   20133 Pavia \\
+   Italy \\
+   \\
+   $^3$ GEM Model Facility\\
+   SED - ETHZ\\ 
+   Sonneggstrasse, 5 \\
+   CH-8092 Zurich\\
+   Switzerland \\ 
+   \\
+   Email address (for all the authors): \hfill \\
+   $<$name.surname$>$@globalquakemodel.org
    \normalsize
 }  
 %
@@ -130,6 +163,7 @@
 	\input{./Part_Hazard/unifiedSeismicSourceDescription.tex}
 % ------------------------------------------------------------------------------
 \chapter{Earthquake Rupture Forecast calculator}
+	\label{chap:erf}
 	\input{./Part_Hazard/eqk_Rupture_Forecast_Calculator.tex}
 % ------------------------------------------------------------------------------
 \chapter{Classical PSHA calculator}
@@ -143,6 +177,10 @@
 % ==============================================================================
 % ------------------------------------------------------------------------- Part
 \part{Risk}
+% ------------------------------------------------------------------------------
+\chapter{OpenQuake Input Description: Risk}
+	\input{./Part_Risk/Risk_Input_Description.tex}
+% ------------------------------------------------------------------------------
 \chapter{Deterministic event based calculator}
 	\input{./Part_Risk/deterministic_Event_Based.tex}
 % ------------------------------------------------------------------------------
@@ -176,5 +214,5 @@
 % ==============================================================================
 % ----------------------------------------------------------------- Bibliography
 \bibliographystyle{apalike}
-\bibliography{/Users/marcop/seismology.bib}
+\bibliography{./Bibliography/hazard.bib,./Bibliography/risk.bib,./Bibliography/sei.bib}
 \end{document}
