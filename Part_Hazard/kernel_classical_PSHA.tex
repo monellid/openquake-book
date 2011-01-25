@@ -1,20 +1,21 @@
-OpenQuake computes hazard based on the classical PSHA approach 
+OpenQuake computes classical PSHA 
 \citep{cornell1968,mcguire2004} following the methodology proposed by 
 \citet{field2003}. This methodology has the distinctive property of performing
 the entire calculation using probabilities, as orginally proposed by 
 \citet{chiang1984}, instead of working with occurrence rates like in most 
 of the commonest PSHA codes \citep[see for instance][]{bender1987}. 
 %
-This has the clear advantage of decoupling the creation of the probabilistic 
-seismicity occurrence model (in the OpenSHA terminology this is defined as the 
-Earthquake Rupture Forecast) from the assumption of a Poissonian temporal 
-occurrence model. 
+This methodology has the clear advantage of decoupling the creation of the 
+probabilistic seismicity occurrence model (in the OpenSHA terminology this is 
+defined as the Earthquake Rupture Forecast) from the assumption of a Poissonian 
+temporal occurrence model. 
 %
 \citet{field2003} demonstrated the congruence between the original PSHA 
 formulation based on occurrences and the methodology here adopted 
 in the case of a Poissonian temporal model. 
 
-From a more strict calculation perspective two, are the main steps accomplished:
+From a more strict calculation perspective two, are the main steps composing the
+procedure:
 \begin{itemize}
 \item Creation of the probabilistic seismicity occurrence model, i.e. a discrete 
 distribution giving the probability of occurrence of each possible rupture 
@@ -29,15 +30,12 @@ of the current chapter.
 %
 % --------------------------------------------------------------------------------
 \section{Calculation kernel}
-Considering a single rupture $rup$ of magnitude $m_i$ occurring on a given 
-seismic source, its probability of occurrence in a given time span is: 
-\begin{equation}
-P(Rup) = P(n=1)\,P(M=m_i)\,P(Rup|m_i)
-\end{equation}
-where $P(n=1)$ is the probability of occurrence of one event in the given seismic
-source, $P(M=m_i)$ is the probability that given an occurrence this will have a 
-magnitude equal to $m_i$ and, $P(Rup|m_i)$ is the probability of rupture $Rup$
-given magnitude $m_i$ within the seismic source considered 
+The classical PSHA calculation kernel takes an Earthquake Rupture Forecast (ERF) 
+as an input; an ERF is simply a list of all the possible ruptures occurring on 
+all the seismic sources included in a Source Model; each rupture $Rup$ is  
+associated with a probability of occurrence in the time span $t$ fixed for the 
+analysis. 
+ 
 %
 % --------------------------------------------------------------------------------
 \section{Hazard calculation: traditional formulation in terms of probabilities}
@@ -58,7 +56,8 @@ P(U\geq u)=
 \end{equation}
 where $l$ i the number of sources 
 
-If the probability of multiple occurrences is assumed to be negligible:
+If the probability of multiple occurrences is assumed to be negligible the 
+probability to get an exceedance of $x$ in a given time span corresponds to:
 %
 \begin{equation}
 P(X\geq x)=1-\prod\limits_{i=1}^{l} 
