@@ -3,7 +3,7 @@ This method uses stochastic event sets and associated ground motion fields to co
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=9cm,height=10cm]{./Figures/Part_Risk/Scheme_Prob_calc.eps}
+\includegraphics[width=9cm,height=9cm]{./Figures/Part_Risk/Scheme_Prob_calc.eps}
 \caption{Architecture of the probabilistic event-based calculator.}
 \label{fig:Scheme_Prob_calc}
 \end{figure}
@@ -33,7 +33,7 @@ The method used to sample this parameter can follow two approaches in order to c
 
 \item Perfectly correlated: the term $\epsilon$ is randomly sampled once for the first asset and this result is used to derive the loss ratio for all the assets. 
 
-\item Independently correlated: the term $\epsilon$ is always randomly sampled for each asset and therefore the correlation between the vulnerability of the assets is ignored.
+\item Uncorrelated: the term $\epsilon$ is always randomly sampled for each asset and therefore the correlation between the vulnerability of the assets is ignored.
 
 \end{itemize}
 
@@ -64,12 +64,5 @@ PE(LR_n) = 1-\exp{-\lambda_n\times t}
 Where $t$ stands for the time span used to produce the stochastic event set.
 
 \end{enumerate}
-
-
-
-
-
-
-
 
 

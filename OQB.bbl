@@ -1,0 +1,116 @@
+\begin{thebibliography}{}
+
+\bibitem[Aki and Richards, 2002]{aki2002}
+Aki, K. and Richards, P.~G. (2002).
+\newblock {\em Quantitative Seismology}.
+\newblock University Science Books, Sausalito, California.
+
+\bibitem[Bal et~al., 2010]{Baletal2010}
+Bal, I., Crowley, H., and Pinho, R. (2010).
+\newblock {\em Displacement-Based Earthquake Loss Assessment: Method
+  Development and Application to Turkish Building Stock}.
+\newblock PhD thesis, Centre for Post-Graduate Training and Research in
+  Earthquake Engineering and Engineering Seismology.
+
+\bibitem[Bender and Perkins, 1987]{bender1987}
+Bender, B. and Perkins, D.~M. (1987).
+\newblock {Seisrisk III: A computer program for seismic hazard estimation}.
+\newblock Bulletin 1772, United States Geological Survey.
+
+\bibitem[Bommer and Scherbaum, 2008]{bommer2008}
+Bommer, J.~J. and Scherbaum, F. (2008).
+\newblock {The Use and Misuse of Logic Trees in Probabilistic Seismic Hazard
+  Analysis}.
+\newblock {\em Earthquake Spectra}, 24(4):997Ð1009.
+
+\bibitem[Chiang et~al., 1984]{chiang1984}
+Chiang, W.~L., Guidi, G.~A., Scoof, C.~G., and Shah, H.~C. (1984).
+\newblock {Computer Programs for Seismic Hazard Analysis - A User Manual
+  (STASHA)}.
+\newblock Report~62, The J. A. Blume Earthquake Engineering Center.
+
+\bibitem[Coppersmith et~al., 2009]{coppersmith2009}
+Coppersmith, K.~J., Youngs, R.~R., and Sprecher, C. (2009).
+\newblock {Methodology and main results of seismic source characterization for
+  PEGASOS Project, Switzerland}.
+\newblock {\em Swiss J. Geosc.}, 102:91--105.
+
+\bibitem[Cornell, 1968]{cornell1968}
+Cornell, C.~A. (1968).
+\newblock Engineering seismic risk analysis.
+\newblock {\em Bulletin of the Seismological Society of America},
+  58:1583--1606.
+
+\bibitem[Crowley and Pinho, 2004]{CrowleyPinho2004}
+Crowley, H. and Pinho, R. (2004).
+\newblock Period-height relationship for existing european reinforced concrete
+  buildings.
+\newblock {\em Journal of Earthquake Engineering}, 8:93--120.
+
+\bibitem[FEMA-440:ATC, 2005]{FEMA440ATC2005}
+FEMA-440:ATC (2005).
+\newblock Improvement of nonlinear static seismic analysis procedures,.
+\newblock Technical report, California, USA.
+
+\bibitem[Field et~al., 2003]{field2003}
+Field, E.~H., Jordan, T.~H., and Cornell, C.~A. (2003).
+\newblock {OpenSHA - A developing Community-Modeling Environment for Seismic
+  Hazard Analysis}.
+\newblock {\em Seism. Res. Lett.}, 74:406--419.
+
+\bibitem[Frankel, 1995]{frankel1995}
+Frankel, A. (1995).
+\newblock {Mapping Seismic Hazard in the Central and Eastern United States}.
+\newblock {\em Seismological Research Letters}, 66(4):8--21.
+
+\bibitem[Harmsen, 2008]{harmsen2008}
+Harmsen, S. (2008).
+\newblock {Appendix C. Distance to a Fault with Random Strike. In Documentation
+  for the 2008 Update of the United States National Seismic Hazard Maps}.
+\newblock Open File Report 2008-1128, U.S. Department of the Interior, U.S.
+  Geological Survey.
+
+\bibitem[Jayaram and Baker, 2009]{jayaram2009}
+Jayaram, N. and Baker, J.~W. (2009).
+\newblock Correlation model for spatially distributed ground-motion
+  intensities.
+\newblock {\em Earthquake Engineering and Structural Dynamics}.
+
+\bibitem[Matthews and Ells\-worth, 2002]{matthews2002}
+Matthews, M.~V. and Ells\-worth, W. L.~Reasenberg, P.~A. (2002).
+\newblock A brownian model for recurrent earthquakes.
+\newblock {\em Bulletin of the Seismological Society of America},
+  92(6):2233--2250.
+
+\bibitem[McGuire, 2004]{mcguire2004}
+McGuire, R.~K. (2004).
+\newblock {\em Seismic Hazard and Risk Analysis}.
+\newblock EERI.
+
+\bibitem[Pagani et~al., 2010]{pagani2010}
+Pagani, M., Monelli, D., Crowley, H., Danciu, L., Field, E.~H., Wiemer, S., and
+  Giardini, D. (2010).
+\newblock {GEM1 Hazard: Description of Input Models, Calculation Engine and
+  Main Results}.
+\newblock GEM Technical Report 2010-3, GEM Foundation, Pavia, Italy.
+
+\bibitem[{Senior Seismic Hazard Analysis Committee}, 1997]{sshac1997}
+{Senior Seismic Hazard Analysis Committee} (1997).
+\newblock Recommendations for probabilistic seismic hazard analysis: Guidance
+  on uncertainty and use of experts.
+\newblock Technical Report NUREG/CR-6372, UCRL-ID-122160, Vol. 1, Lawrence
+  Livermore National Laboratory.
+
+\bibitem[Wesson et~al., 2009]{wesson2009}
+Wesson, R.~L., Perkins, D.~M., Luco, N., and Karaca, E. (2009).
+\newblock Direct calculation of the probability distribution for earthquake
+  losses to a portfolio.
+\newblock {\em Earthquake Spectra}, 25(3):687--706.
+
+\bibitem[Woo, 1996]{woo1996}
+Woo, G. (1996).
+\newblock Kernel estimation methods for seismic hazard area source modeling.
+\newblock {\em Bulletin of the Seismological Society of America},
+  86(2):353--362.
+
+\end{thebibliography}

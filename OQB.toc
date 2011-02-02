@@ -1,0 +1,70 @@
+\select@language {english}
+\contentsline {part}{I\hspace {1em}Introduction}{9}
+\contentsline {chapter}{\numberline {1}OpenQuake background}{11}
+\contentsline {chapter}{\numberline {2}Brief desciption of OpenQuake IT aspects}{13}
+\contentsline {section}{\numberline {2.1}Risk-lib}{13}
+\contentsline {part}{II\hspace {1em}Hazard}{15}
+\contentsline {chapter}{\numberline {3}Introduction}{17}
+\contentsline {chapter}{\numberline {4}OpenQuake input description}{19}
+\contentsline {section}{\numberline {4.1}Logic-tree description}{20}
+\contentsline {section}{\numberline {4.2}The OpenQuake source model}{21}
+\contentsline {subsection}{\numberline {4.2.1}Seismic source typologies description}{21}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Area sources}{24}
+\contentsline {paragraph}{Parameters}{24}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Grid sources}{25}
+\contentsline {paragraph}{Parameters}{25}
+\contentsline {subsection}{\numberline {4.2.2}Accounting for rupture finiteness in case of areal and grid sources}{26}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Simple faults}{26}
+\contentsline {paragraph}{Parameters}{26}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Complex faults}{27}
+\contentsline {paragraph}{Representation of complex faults}{27}
+\contentsline {section}{\numberline {4.3}GMPEs description}{27}
+\contentsline {section}{\numberline {4.4}Calculation settings description}{27}
+\contentsline {chapter}{\numberline {5}Earthquake Rupture Forecast calculator}{29}
+\contentsline {subsubsection}{\numberline {5.0.0.3}The Poisson model}{29}
+\contentsline {subsubsection}{\numberline {5.0.0.4}Brownian Time Passage (BTP) model}{29}
+\contentsline {subsection}{\numberline {5.0.1}Frequency-magnitude distribution models}{29}
+\contentsline {subsubsection}{\numberline {5.0.1.1}Gutenberg-Richter distribution}{29}
+\contentsline {section}{\numberline {5.1}ERF creation in case of Area sources}{29}
+\contentsline {section}{\numberline {5.2}ERF creation in case of Grid sources}{30}
+\contentsline {section}{\numberline {5.3}ERF creation in case of Fault sources}{30}
+\contentsline {subsection}{\numberline {5.3.1}Fault sources with simple geometry}{30}
+\contentsline {subsection}{\numberline {5.3.2}Fault sources with complex geometry}{30}
+\contentsline {chapter}{\numberline {6}Classical PSHA calculator}{31}
+\contentsline {section}{\numberline {6.1}Calculation kernel}{31}
+\contentsline {section}{\numberline {6.2}Hazard calculation: traditional formulation in terms of probabilities}{32}
+\contentsline {subsection}{\numberline {6.2.1}Example}{32}
+\contentsline {chapter}{\numberline {7}Stochastic event set and ground motion field calculators}{33}
+\contentsline {section}{\numberline {7.1}Stochastic Event Set Calculator}{33}
+\contentsline {section}{\numberline {7.2}Ground Motion Fields calculator}{33}
+\contentsline {subsection}{\numberline {7.2.1}Spatially correlated ground motion fields}{33}
+\contentsline {section}{\numberline {7.3}Stochastic PSHA calculator}{34}
+\contentsline {chapter}{\numberline {8}Wesson et al. [2009] risk calculation implementation}{35}
+\contentsline {part}{III\hspace {1em}Risk}{37}
+\contentsline {chapter}{\numberline {9}OpenQuake Input Description: Risk}{39}
+\contentsline {section}{\numberline {9.1}Exposure}{39}
+\contentsline {section}{\numberline {9.2}Vulnerability}{39}
+\contentsline {subsection}{\numberline {9.2.1}Vulnerability Function}{40}
+\contentsline {subsubsection}{\numberline {9.2.1.1}Discrete Vulnerability Functions}{40}
+\contentsline {subsubsection}{\numberline {9.2.1.2}Continuous Vulnerability Functions}{41}
+\contentsline {subsection}{\numberline {9.2.2}Fragility Functions}{41}
+\contentsline {subsubsection}{\numberline {9.2.2.1}Discrete Fragility Functions}{42}
+\contentsline {subsubsection}{\numberline {9.2.2.2}Continuous Fragility Functions}{42}
+\contentsline {subsection}{\numberline {9.2.3}Consequence Functions}{43}
+\contentsline {chapter}{\numberline {10}Deterministic event based calculator}{45}
+\contentsline {chapter}{\numberline {11}Classical PSHA based calculator}{47}
+\contentsline {section}{\numberline {11.1}Description}{47}
+\contentsline {section}{\numberline {11.2}Calculations workflow}{48}
+\contentsline {chapter}{\numberline {12}Probabilistic event based calculator}{51}
+\contentsline {section}{\numberline {12.1}Description}{51}
+\contentsline {section}{\numberline {12.2}Calculations workflow}{52}
+\contentsline {part}{IV\hspace {1em}Socio-Economic Impact Assessment}{55}
+\contentsline {part}{V\hspace {1em}Modeller's Toolkit}{59}
+\contentsline {chapter}{\numberline {13}Introduction}{61}
+\contentsline {chapter}{\numberline {14}Input visualization and preparation}{63}
+\contentsline {section}{\numberline {14.1}Hazard}{63}
+\contentsline {section}{\numberline {14.2}Risk}{63}
+\contentsline {section}{\numberline {14.3}Socio-Economic Impact}{63}
+\contentsline {part}{VI\hspace {1em}Appendixes}{65}
+\contentsline {chapter}{\numberline {A}Example of OpenQuake hazard calculation configuration file}{67}
+\contentsline {chapter}{\numberline {B}Example of OpenQuake risk calculation configuration file}{69}

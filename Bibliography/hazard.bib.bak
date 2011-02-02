@@ -109,16 +109,6 @@
   timestamp = {2010.07.09}
 }
 
-@ARTICLE{jayaram2009,
-  author = {Jayaram, N. and Baker, J. W.},
-  title = {Correlation model for spatially distributed ground-motion intensities},
-  journal = {Earthquake Engineering and Structural Dynamics},
-  year = {2009},
-  doi = {10.1002/eqe.922},
-  owner = {marco},
-  timestamp = {2010.08.05}
-}
-
 @ARTICLE{matthews2002,
   author = {Matthews, M. V. and Ells\-worth, W. L. Reasenberg, P. A.},
   title = {A Brownian Model for Recurrent Earthquakes},
@@ -217,6 +207,16 @@
   number = {NUREG/CR-6372, UCRL-ID-122160, Vol. 1},
   owner = {marcop},
   timestamp = {2010.12.31}
+}
+
+@ARTICLE{jayaram2009,
+  author = {Jayaram, N. and Baker, J. W.},
+  title = {Correlation model for spatially distributed ground-motion intensities},
+  journal = {Earthquake Engineering and Structural Dynamics},
+  year = {2009},
+  doi = {10.1002/eqe.922},
+  owner = {marco},
+  timestamp = {2010.08.05}
 }
 
 @ARTICLE{weichert1980,
