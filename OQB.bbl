@@ -12,6 +12,12 @@ Bal, I., Crowley, H., and Pinho, R. (2010).
 \newblock PhD thesis, Centre for Post-Graduate Training and Research in
   Earthquake Engineering and Engineering Seismology.
 
+\bibitem[Bender and Perkins, 1982]{bender1982}
+Bender, B. and Perkins, D.~M. (1982).
+\newblock {SEISRISK II : a computer program for seismic hazard estimation}.
+\newblock Open-File Report 82-293, United States Department of the Interiors,
+  Geological Survey.
+
 \bibitem[Bender and Perkins, 1987]{bender1987}
 Bender, B. and Perkins, D.~M. (1987).
 \newblock {Seisrisk III: A computer program for seismic hazard estimation}.
@@ -47,6 +53,11 @@ Crowley, H. and Pinho, R. (2004).
   buildings.
 \newblock {\em Journal of Earthquake Engineering}, 8:93--120.
 
+\bibitem[Esteva, 1968]{esteva1968}
+Esteva, L. (1968).
+\newblock {\em Bases para la formulacion de decisiones de diseno sismico}.
+\newblock PhD thesis, Universidad Autonoma Nacional de Mexico.
+
 \bibitem[FEMA-440:ATC, 2005]{FEMA440ATC2005}
 FEMA-440:ATC (2005).
 \newblock Improvement of nonlinear static seismic analysis procedures,.
@@ -76,16 +87,23 @@ Jayaram, N. and Baker, J.~W. (2009).
   intensities.
 \newblock {\em Earthquake Engineering and Structural Dynamics}.
 
-\bibitem[Matthews and Ells\-worth, 2002]{matthews2002}
-Matthews, M.~V. and Ells\-worth, W. L.~Reasenberg, P.~A. (2002).
-\newblock A brownian model for recurrent earthquakes.
-\newblock {\em Bulletin of the Seismological Society of America},
-  92(6):2233--2250.
+\bibitem[McGuire, 1976]{mcguire1976}
+McGuire, K.~K. (1976).
+\newblock Fortran computer program for seismic risk analysis.
+\newblock Open-File report 76-67, {United States Department of the Interior,
+  Geological Survey}.
+\newblock 102 pages.
 
 \bibitem[McGuire, 2004]{mcguire2004}
 McGuire, R.~K. (2004).
 \newblock {\em Seismic Hazard and Risk Analysis}.
 \newblock EERI.
+
+\bibitem[Pagani and Marcellini, 2007]{pagani2007}
+Pagani, M. and Marcellini, A. (2007).
+\newblock Seismic-hazard disaggregation: A fully probabilistic methodology.
+\newblock {\em Bulletin of the Seismological Society of America},
+  97(5):1688--1701.
 
 \bibitem[Pagani et~al., 2010]{pagani2010}
 Pagani, M., Monelli, D., Crowley, H., Danciu, L., Field, E.~H., Wiemer, S., and

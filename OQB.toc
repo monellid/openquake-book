@@ -5,62 +5,61 @@
 \contentsline {section}{\numberline {2.1}Risk-lib}{13}
 \contentsline {part}{II\hspace {1em}Hazard}{15}
 \contentsline {chapter}{\numberline {3}Introduction}{17}
+\contentsline {section}{\numberline {3.1}OpenQuake-hazard}{17}
 \contentsline {chapter}{\numberline {4}OpenQuake input description}{19}
 \contentsline {section}{\numberline {4.1}Logic-tree description}{20}
 \contentsline {section}{\numberline {4.2}The OpenQuake source model}{21}
 \contentsline {subsection}{\numberline {4.2.1}Seismic source typologies description}{21}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Area sources}{24}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Area sources}{22}
 \contentsline {paragraph}{Parameters}{24}
 \contentsline {subsubsection}{\numberline {4.2.1.2}Grid sources}{25}
 \contentsline {paragraph}{Parameters}{25}
-\contentsline {subsection}{\numberline {4.2.2}Accounting for rupture finiteness in case of areal and grid sources}{26}
+\contentsline {subsection}{\numberline {4.2.2}Accounting for rupture finiteness in case of areal and grid sources}{25}
 \contentsline {subsubsection}{\numberline {4.2.2.1}Simple faults}{26}
 \contentsline {paragraph}{Parameters}{26}
-\contentsline {subsubsection}{\numberline {4.2.2.2}Complex faults}{27}
-\contentsline {paragraph}{Representation of complex faults}{27}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Complex faults}{26}
+\contentsline {paragraph}{Representation of complex faults}{26}
 \contentsline {section}{\numberline {4.3}GMPEs description}{27}
 \contentsline {section}{\numberline {4.4}Calculation settings description}{27}
-\contentsline {chapter}{\numberline {5}Earthquake Rupture Forecast calculator}{29}
-\contentsline {subsubsection}{\numberline {5.0.0.3}The Poisson model}{29}
-\contentsline {subsubsection}{\numberline {5.0.0.4}Brownian Time Passage (BTP) model}{29}
-\contentsline {subsection}{\numberline {5.0.1}Frequency-magnitude distribution models}{29}
-\contentsline {subsubsection}{\numberline {5.0.1.1}Gutenberg-Richter distribution}{29}
-\contentsline {section}{\numberline {5.1}ERF creation in case of Area sources}{29}
-\contentsline {section}{\numberline {5.2}ERF creation in case of Grid sources}{30}
-\contentsline {section}{\numberline {5.3}ERF creation in case of Fault sources}{30}
-\contentsline {subsection}{\numberline {5.3.1}Fault sources with simple geometry}{30}
-\contentsline {subsection}{\numberline {5.3.2}Fault sources with complex geometry}{30}
+\contentsline {chapter}{\numberline {5}The Source System and the creation of the Earthquake Rupture Forecast}{29}
+\contentsline {section}{\numberline {5.1}The Logic Tree processor}{30}
+\contentsline {section}{\numberline {5.2}ERF calculator}{30}
+\contentsline {subsection}{\numberline {5.2.1}ERF creation in case of Grid sources}{30}
+\contentsline {subsection}{\numberline {5.2.2}ERF creation in case of Grid sources}{30}
+\contentsline {subsection}{\numberline {5.2.3}ERF creation in case of Fault sources}{30}
+\contentsline {subsubsection}{\numberline {5.2.3.1}Fault sources with simple geometry}{30}
+\contentsline {subsubsection}{\numberline {5.2.3.2}Fault sources with complex geometry}{30}
 \contentsline {chapter}{\numberline {6}Classical PSHA calculator}{31}
-\contentsline {section}{\numberline {6.1}Calculation kernel}{31}
+\contentsline {section}{\numberline {6.1}Calculation kernel}{32}
 \contentsline {section}{\numberline {6.2}Hazard calculation: traditional formulation in terms of probabilities}{32}
 \contentsline {subsection}{\numberline {6.2.1}Example}{32}
 \contentsline {chapter}{\numberline {7}Stochastic event set and ground motion field calculators}{33}
 \contentsline {section}{\numberline {7.1}Stochastic Event Set Calculator}{33}
 \contentsline {section}{\numberline {7.2}Ground Motion Fields calculator}{33}
-\contentsline {subsection}{\numberline {7.2.1}Spatially correlated ground motion fields}{33}
+\contentsline {subsection}{\numberline {7.2.1}Spatially correlated ground motion fields}{34}
 \contentsline {section}{\numberline {7.3}Stochastic PSHA calculator}{34}
 \contentsline {chapter}{\numberline {8}Wesson et al. [2009] risk calculation implementation}{35}
 \contentsline {part}{III\hspace {1em}Risk}{37}
 \contentsline {chapter}{\numberline {9}OpenQuake Input Description: Risk}{39}
 \contentsline {section}{\numberline {9.1}Exposure}{39}
-\contentsline {section}{\numberline {9.2}Vulnerability}{39}
+\contentsline {section}{\numberline {9.2}Vulnerability}{40}
 \contentsline {subsection}{\numberline {9.2.1}Vulnerability Function}{40}
 \contentsline {subsubsection}{\numberline {9.2.1.1}Discrete Vulnerability Functions}{40}
-\contentsline {subsubsection}{\numberline {9.2.1.2}Continuous Vulnerability Functions}{41}
+\contentsline {subsubsection}{\numberline {9.2.1.2}Continuous Vulnerability Functions}{40}
 \contentsline {subsection}{\numberline {9.2.2}Fragility Functions}{41}
-\contentsline {subsubsection}{\numberline {9.2.2.1}Discrete Fragility Functions}{42}
+\contentsline {subsubsection}{\numberline {9.2.2.1}Discrete Fragility Functions}{41}
 \contentsline {subsubsection}{\numberline {9.2.2.2}Continuous Fragility Functions}{42}
 \contentsline {subsection}{\numberline {9.2.3}Consequence Functions}{43}
 \contentsline {chapter}{\numberline {10}Deterministic event based calculator}{45}
-\contentsline {section}{\numberline {10.1}Method A}{46}
-\contentsline {subsection}{\numberline {10.1.1}Description}{46}
+\contentsline {section}{\numberline {10.1}Method A}{45}
+\contentsline {subsection}{\numberline {10.1.1}Description}{45}
 \contentsline {subsection}{\numberline {10.1.2}Calculations workflow}{46}
 \contentsline {section}{\numberline {10.2}Method B}{48}
 \contentsline {subsection}{\numberline {10.2.1}Description}{48}
-\contentsline {subsection}{\numberline {10.2.2}Calculations workflow}{48}
+\contentsline {subsection}{\numberline {10.2.2}Calculations workflow}{49}
 \contentsline {chapter}{\numberline {11}Classical PSHA based calculator}{51}
 \contentsline {section}{\numberline {11.1}Description}{51}
-\contentsline {section}{\numberline {11.2}Calculations workflow}{52}
+\contentsline {section}{\numberline {11.2}Calculations workflow}{51}
 \contentsline {chapter}{\numberline {12}Probabilistic event based calculator}{55}
 \contentsline {section}{\numberline {12.1}Description}{55}
 \contentsline {section}{\numberline {12.2}Calculations workflow}{56}

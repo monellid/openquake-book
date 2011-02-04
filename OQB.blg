@@ -2,47 +2,47 @@ This is BibTeX, Version 0.99d (TeX Live 2010)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: OQB.aux
 The style file: apalike.bst
-Database file #1: ./Bibliography/hazard.bib.bib
-Database file #2: ./Bibliography/risk.bib.bib
+Database file #1: ./Bibliography/hazard.bib
+Database file #2: ./Bibliography/risk.bib
 Database file #3: ./Bibliography/sei.bib.bib
-You've used 19 entries,
+You've used 22 entries,
             1935 wiz_defined-function locations,
-            593 strings with 6836 characters,
-and the built_in function-call counts, 6696 in all, are:
-= -- 647
-> -- 265
-< -- 18
-+ -- 88
-- -- 86
-* -- 555
-:= -- 1227
-add.period$ -- 57
-call.type$ -- 19
-change.case$ -- 136
-chr.to.int$ -- 19
-cite$ -- 19
-duplicate$ -- 250
-empty$ -- 458
-format.name$ -- 117
-if$ -- 1286
+            613 strings with 7300 characters,
+and the built_in function-call counts, 7541 in all, are:
+= -- 734
+> -- 292
+< -- 23
++ -- 94
+- -- 94
+* -- 615
+:= -- 1394
+add.period$ -- 67
+call.type$ -- 22
+change.case$ -- 154
+chr.to.int$ -- 22
+cite$ -- 22
+duplicate$ -- 286
+empty$ -- 511
+format.name$ -- 130
+if$ -- 1444
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 14
-newline$ -- 98
-num.names$ -- 57
-pop$ -- 104
+newline$ -- 114
+num.names$ -- 66
+pop$ -- 116
 preamble$ -- 1
-purify$ -- 138
+purify$ -- 157
 quote$ -- 0
-skip$ -- 189
+skip$ -- 217
 stack$ -- 0
-substring$ -- 419
-swap$ -- 18
-text.length$ -- 5
+substring$ -- 453
+swap$ -- 21
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
+type$ -- 128
 warning$ -- 0
-while$ -- 47
+while$ -- 53
 width$ -- 0
-write$ -- 248
+write$ -- 289
