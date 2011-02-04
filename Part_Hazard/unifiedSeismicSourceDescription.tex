@@ -1,27 +1,23 @@
-An OpenQuake Source model (i.e. a PSHA input model) contains four distinct information blocks: (1) information 
-regarding location, geometry, and seismicity generation properties of seismic
-sources, (2) information about ground motion prediction equations to be 
-adopted in the calculation, (3) information about the epistemic uncertainties 
-related to the two aforementioned points, and (4) information specifying 
-calculation settings.
+\index{PSHA!Input model}
+An OpenQuake PSHA input model contains four distinct information blocks: (1) information regarding location, geometry, and seismicity properties of seismic sources, (2) information about ground motion prediction equations to be  adopted in the calculation, (3) information about the epistemic uncertainties related to the two aforementioned points, and (4) information specifying calculation settings.
 
 The description of epistemic uncertainties is accomplished via a logic-tree 
-structure, described branching level by branching level. In OpenQuake it's 
-possible to define two logic-tree structures: one describing epistemic 
-uncertainties associate with the creation of the ERF and one considering the
-uncertainties connected with the use of GMPEs. For the sake of homogeneity 
-and simplicity, the OpenQuake PSHA input models are always defined using two 
-logic tree structures. In cases when epistemic uncertainties are non accounted
-for, the two logic tree structures simply have one branching level with one 
-branch (with weight equal to 1).
-Further explanations on the way we describe and model logic-tree is provided 
-in section \ref{hazard:logic_tree} at page \pageref{hazard:logic_tree}. 
+structure, described branching level by branching level. In particular, OpenQuake requires two logic-tree structures, one describing epistemic uncertainties associated with the creation of the ERF - called Seismic Source logic tree - and one considering the uncertainties connected with the use of GMPEs - called GMPE logic tree. 
+%
+\index{Logic Tree!Seismic source}
+\index{Logic Tree!GMPE}
+%
+Indeed, the OpenQuake PSHA input models are always defined using two logic tree structures. In cases when epistemic uncertainties are non accounted for, the logic tree structure simply have one branching level with just one branch (with weight equal to 1).
+%
+With respect to the Seismic Source logic tree, we call Source System the object containining the information necessary for the creation of a Source Model considering the epistemic uncertainties on seismic source geometries and parameters. This information consists on a logic tree structure and one - or many - Initial Source Model.
+%
+Further explanations about the way we describe and model logic-trees are provided in section \ref{hazard:logic_tree} at page \pageref{hazard:logic_tree}. 
 
 The description of OpenQuake seismic source properties is subdivided into 
-source location and geometry and source frequency-magnitude distribution. 
+source location and geometry and source frequency-magnitude distribution.
+%
 Section \ref{hazard:seismic_source_types} provides an in deep description of 
-the properties pertinent to the different source types supported, together 
-with examples of each single source type nrML description. 
+the properties pertinent to the different source types supported. 
 
 The selection of ground motion prediction equations (GMPE) in OpenQuake 
 is basically accomplished by specifying a label in a particular file.  
@@ -50,12 +46,9 @@ definition of the parameter - or model - affected by uncertainty, (2) the
 specification of the type of uncertainty (3) the listing of the - mutually 
 exclusive and collectively exhaustive \citep{bommer2008} - alternative 
 hypotheses and, (4) the index of the branches of the previous level to which 
-this branching level applies. 
-Each hypothesis (i.e. branch) included in a branching level has 
-an associated value and a corresponding weight expressing - according to 
-different interpretations available in the literature - ``probabilities or 
-simply subjective indications of relative merit'' 
-\citep[][pagecon 999]{bommer2008}.
+this branching level applies.
+%
+Each hypothesis (i.e. branch) included in a branching level has an associated value and a corresponding weight expressing - according to different interpretations available in the literature - ``probabilities or simply subjective indications of relative merit'' \citep[][pagecon 999]{bommer2008}.
 
 Figure \ref{fig:logic_tree_branching_levels} depicts a 
 branching level defining epistemic uncertainties on the dip angle of simple 
@@ -172,39 +165,6 @@ describing the logic tree structure.
 \small
 \begin{Verbatim}[numbers=left,frame=single,fontsize=\small]
 <?xml version="1.0" encoding="UTF-8"?>
-<ns2:logicTreeSet 
- xmlns:ns1="http://www.opengis.net/gml/profile/sfgml/1.0"
- xmlns:ns2="http://openquake.org/xmlns/nrml/0.1"
- xmlns:ns3="http://www.w3.org/1999/xlink"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://openquake.org/xmlns/nrml/0.1 
-    file:/Users/damianomonelli/Projects/opengem/docs/schema/nrml_seismic.xsd">
-    <ns2:logicTree tectonicRegion="Active Shallow Crust">
-        <ns2:logicTreeBranchSet ns2:uncertaintyType="gmpeModel">
-            <ns2:logicTreeBranch>
-                <ns2:uncertaintyModel>
-                    BA_2008_AttenRel
-                </ns2:uncertaintyModel>
-                <ns2:uncertaintyWeight>0.5</ns2:uncertaintyWeight>
-            </ns2:logicTreeBranch>
-            <ns2:logicTreeBranch>
-                <ns2:uncertaintyModel>
-                    CB_2008_AttenRel
-                </ns2:uncertaintyModel>
-                <ns2:uncertaintyWeight>0.5</ns2:uncertaintyWeight>
-            </ns2:logicTreeBranch>
-        </ns2:logicTreeBranchSet>
-    </ns2:logicTree>
-    <ns2:logicTree tectonicRegion="Subduction Interface">
-        <ns2:logicTreeBranchSet ns2:uncertaintyType="gmpeModel">
-            <ns2:logicTreeBranch>
-                <ns2:uncertaintyModel>
-                    McVerryetal_2000_AttenRel
-                </ns2:uncertaintyModel>
-                <ns2:uncertaintyWeight>1.0</ns2:uncertaintyWeight>
-            </ns2:logicTreeBranch>
-        </ns2:logicTreeBranchSet>
-    </ns2:logicTree>
 </ns2:logicTreeSet>
 \end{Verbatim}
 \normalsize
@@ -257,6 +217,8 @@ discretized distribution.
 %  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 \subsubsection{Area sources}
 \label{hazard:seismic_source_types:areaSources}
+\index{Source type!area} 
+\index{Area source|see{Source type}}
 Area sources usually model the seismicity occurring over wide areas where fault 
 sources identification or characterization - i.e. the unambiguous definition 
 of seismicity occurrence parameters - is difficult. 
@@ -307,8 +269,9 @@ rupture array are modelled considering their finite dimensions.
 %
 %  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 \subsubsection{Grid sources}
-A grid source is a typology used to model distributed seismicity - usually 
-of low and intermediate magnitude.
+\index{Source type!grid}
+\index{Grid source|see{Source type}}
+A grid source  is a typology used to model distributed seismicity - usually of low and intermediate magnitude.
 
 Grid sources can be considered as a PSHA source model alternative to area 
 sources since they both try to represent distributed seismicity. Grid sources 
@@ -331,7 +294,7 @@ characterize a point source.
 %
 For each grid node:
 \begin{itemize}
-\item A location specified in terms of the <latitude,longitude> tuple;
+\item A location specified in terms of the $<$latitude,longitude$>$ tuple;
 \item Similarly to area sources, one (or many) couples of the following objects:
 	\begin{itemize}
 	\item A discrete Frequency-Magnitude Distribution (FMD)
@@ -345,7 +308,8 @@ For each grid node:
 \item A value to indicate the hypocentral depth in case of punctual sources. The 
 	same convention specified for area sources applies here. 
 \end{itemize}
-%  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+%
+%  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 \subsection{Accounting for rupture finiteness in case of areal and grid sources}
 %
 In the scientific literature is well known that for magnitudes approximately 
@@ -363,6 +327,8 @@ orientation.
 %
 %  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 \subsubsection{Simple faults}
+\index{Source type!fault!simple geometry} 
+\index{Simple fault|see{Source type}}
 %
 Simple Faults are the most common source type used to model faults; the 
 ``simple'' adjective here refers to the geometry description of the source 
@@ -387,13 +353,10 @@ the FMD) will rupture the whole fault surface.
 %
 %  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 \subsubsection{Complex faults}
+\index{Source type!fault!complex geometry}
+\index{Complex fault|see{Source type}}
 %
-Complex faults differ from simple fault just by the way geometry is described and, 
-consequently in the way the fault surface is created. The input parameters used to 
-describe complex faults are, for the most part, the same used to describe the 
-simple fault typology. In particular, in the case of complex faults the dip angle
-is not requested while the fault trace is substituted by two fault traces used to 
-limit at top and bottom the fault surface. 
+Complex faults  differ from simple fault just by the way geometry is described and, consequently in the way the fault surface is created. The input parameters used to describe complex faults are, for the most part, the same used to describe the simple fault typology. In particular, in the case of complex faults the dip angle is not requested while the fault trace is substituted by two fault traces used to limit at top and bottom the fault surface. 
 %
 %  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 
 \paragraph{Representation of complex faults}

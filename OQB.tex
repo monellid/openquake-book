@@ -1,10 +1,18 @@
 % ------------------------------------------------------------------------------
-% The OpenQuake Book
+% The OpenQuake Book 
 % 
-%
-% Document distributed under the Common Creative License bla bla bla
+% Authors: 
+% 	H. Crowley 		- Executive Committee - GEM Foundation, Pavia, Italy
+%	L. Garrido 		- Executive Committee - GEM Foundation, Pavia, Italy
+% 	D. Monelli 		- GEM Model Facility, Zurich, Switzerland
+% 	M. Pagani 		- Executive Committee - GEM Foundation, Pavia, Italy
+% 	V. Silva 		- GEM Model Facility, Pavia, Italy
+%	G. Weatherhill 	- GEM Model Facility, Pavia, Italy
+% 
+% Document distributed under the Common Creative License 
+% © GEM Foundation, Pavia, February 2011
 % ------------------------------------------------------------------------------
-\documentclass[12pt,a4paper,smallheadings]{scrbook}
+\documentclass[12pt,a4paper,headings=small,version=first,dvips]{scrbook}
 % --------------------------------------------------------------------- Packages
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
@@ -12,14 +20,45 @@
 \usepackage{pst-tree}
 \usepackage{pstricks}
 
+\usepackage{geometry}
+\usepackage{moresize}
+
+%
 \usepackage{fancyvrb}
-
+%
 \usepackage{pbox}
-
+%
+\usepackage{makeidx} % http://en.wikibooks.org/wiki/LaTeX/Indexing
+\makeindex
+%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Setting Fonts
+\renewcommand{\encodingdefault}{OT1}
+\renewcommand{\familydefault}{cmss}
+\renewcommand{\seriesdefault}{m}
+\renewcommand{\shapedefault}{up}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \usepackage{amsmath}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \usepackage{titlesec}
-\usepackage{a4}
 \usepackage[dvips]{graphicx}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\usepackage{type1cm,eso-pic,color}
+\makeatletter
+\AddToShipoutPicture{
+    \setlength{\@tempdimb}{.5\paperwidth}
+    \setlength{\@tempdimc}{.5\paperheight}
+    \setlength{\unitlength}{1pt}
+    \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){
+        \makebox(0,0){\rotatebox{55}{
+        	\textcolor[gray]{0.85}{
+        		\fontsize{5cm}{5cm}
+        		\selectfont{DRAFT}}
+        	}
+        }
+	}
+}
+\makeatother
+
 % Solves problems with margin notes
 \usepackage{mparhack} 
 	\setlength{\marginparwidth}{1.1in}
@@ -29,10 +68,18 @@
 	{\raggedright\footnotesize #1}}
 % Colors
 \usepackage{color}
-	\definecolor{blue01}{rgb}{0,0,.5}
+	%\definecolor{blue01}{rgb}{0,0,.5}
+	\definecolor{blue01}{RGB}{4,64,116}
+	\definecolor{blue02}{RGB}{0,62,113}
 	\definecolor{gray01}{rgb}{0.1,0.1,0.1}
+	\definecolor{gray02}{rgb}{0.8,0.8,0.8}
 	\definecolor{red01}{rgb}{0.5,0.0,0.0}
-\usepackage[italian,english]{babel}
+	\definecolor{orange00}{rgb}{1.0,0.74,0.53}
+	\definecolor{orange01}{rgb}{0.9137,0.5882,0.0980}
+	\definecolor{orange02}{rgb}{0.7608,0.4157,0.1804}
+	\definecolor{orange03}{rgb}{0.6941,0.1843,0.1333}
+\usepackage[english]{babel}
+%
 %\usepackage[colorlinks=true]{hyperref}
 %\usepackage{makeindex} % Used to create the index
 %	\makeindex
@@ -41,11 +88,6 @@
 \usepackage{scrpage2}
 	\lofoot[]{\includegraphics[width=2.0cm]{./Figures/openquake_logo1.eps}}
 	\refoot[]{\includegraphics[width=2.0cm]{./Figures/openquake_logo1.eps}}
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Setting Fonts
-\renewcommand{\encodingdefault}{OT1}
-\renewcommand{\familydefault}{cmss}
-\renewcommand{\seriesdefault}{m}
-\renewcommand{\shapedefault}{up}
 % - - - - - - - - - - - - - - - - - - - - - - - - - -  Reformatting PART Titles
 \titleformat{\part}[display]
 {\filleft\normalfont\sffamily}
@@ -105,25 +147,25 @@
 \uppertitleback{
    \textbf{Authors:} \\
    Helen Crowley$^1$, Leonardo Garrido$^1$, Damiano Monelli$^3$, 
-   Marco Pagani$^1$, Vitor Silva$^1$, Graeme Weatherill$^2$ \\ \hfill \\
+   Marco Pagani$^1$, Vitor Silva$^2$, Graeme Weatherill$^2$ \\ \hfill \\
    \small
    $^1$ GEM Foundation\\
    via Ferrata, 1 \\ 
    20133 Pavia \\
    Italy \\
-   \\
-   $^2$ GEM Model Facility\\
-   via Ferrata, 1 \\ 
-   20133 Pavia \\
-   Italy \\
-   \\
-   $^3$ GEM Model Facility\\
-   SED - ETHZ\\ 
-   Sonneggstrasse, 5 \\
-   CH-8092 Zurich\\
-   Switzerland \\ 
-   \\
-   Email address (for all the authors): \hfill \\
+   \hfill\\
+   $^2$ GEM Model Facility\hfill\\
+   via Ferrata, 1\hfill\\ 
+   20133 Pavia\hfill\\
+   Italy\hfill\\
+   \hfill\\
+   $^3$ GEM Model Facility\hfill\\
+   SED - ETHZ\hfill\\ 
+   Sonneggstrasse, 5\\
+   CH-8092 Zurich\hfill\\
+   Switzerland \hfill\\ 
+   \hfill\\
+   Email address (for all the authors):\hfill\\
    $<$name.surname$>$@globalquakemodel.org
    \normalsize
 }  
@@ -131,11 +173,52 @@
 % =============================================================== BEGIN DOCUMENT
 % -------------------------------------------------- Title and table of contents
 \begin{document}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Cover
+\newgeometry{hmargin={-0.4cm,0cm},height=29.7cm}
+\thispagestyle{empty}
+\psset{unit=1cm}
+\begin{pspicture}(0,0)(21cm,29.7cm)
+	\psframe[fillstyle=solid,linecolor=white,fillcolor=white]
+		(0.0cm,15.0cm)(21cm,29.7cm)	
+	\rput[l](0cm,15cm){\includegraphics[width=21cm,height=15cm]{./Figures/adapazari.eps}}
+	\psframe[fillstyle=solid,linecolor=gray02,fillcolor=gray02]
+		(0.0cm,0.0cm)(21cm,15.1cm)
+	
+	\psframe[fillstyle=solid,linecolor=orange01,fillcolor=orange01]
+		(0.0cm,15.0cm)(21cm,15.5cm)
+%	\psframe[fillstyle=solid,linecolor=blue02,fillcolor=blue02]
+%		(0.0cm,15.6cm)(21cm,15.75cm)
+	\psframe[fillstyle=solid,linecolor=orange01,fillcolor=orange01]
+		(0.0cm,25.0cm)(21cm,25.1cm)
+%	\psframe[fillstyle=solid,linecolor=blue02,fillcolor=blue02]
+%		(0.0cm,25.15cm)(21cm,25.18cm)
+	%
+	\rput[r](19.5cm,13.5cm){\sffamily\bfseries\HUGE\color{orange01}
+		{The OpenQuake Book}}
+	%\rput[r](19cm,19.5cm){\sffamily\Large\color{gray02}{\emph{Shaken not stirred}}}
+	% Old Version
+	%\rput[r](18cm,22cm){\sffamily\bfseries\HUGE\color{blue02}
+	%	{The OpenQuake Book}}
+	%\rput[r](18cm,21cm){\sffamily\Large\color{gray02}{\emph{Shaken not stirred}}}
+	% 
+	\rput(4cm,27.5cm){\includegraphics[height=1.5cm]
+		{./Figures/openquake_logo1.eps}}
+	%
+%	\rput[r](18cm,27.5cm){\includegraphics[height=1.5cm]
+%		{./Figures/GEM_logo.eps}}
+	%\rput[r](18cm,9cm){\includegraphics[width=15cm]{./Figures/adapazari.eps}}
+	\rput[r](19.5cm,2cm){\sffamily\large\color{gray01}{Version 1.0}}
+\end{pspicture}
+%  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Second page
+\restoregeometry
+%
+% - - - - - - - - - - - - - - - - - - - - - - -  This is the internal title page
+\setcounter{page}{1}
 \begin{titlepage}
 	\titlehead{\emph{``OpenQuake: Shaken not stirred''}}
 	\title{ \textcolor{blue01}{\textsf{\bfseries\Huge The OpenQuake Book}}  }
+	\date{}
 \end{titlepage}
-
 \pagestyle{scrheadings}
 \maketitle
 \tableofcontents
@@ -162,7 +245,8 @@
 \chapter{OpenQuake input description}
 	\input{./Part_Hazard/unifiedSeismicSourceDescription.tex}
 % ------------------------------------------------------------------------------
-\chapter{Earthquake Rupture Forecast calculator}
+\chapter{The Source System and the creation of the Earthquake Rupture 
+	Forecast}
 	\label{chap:erf}
 	\input{./Part_Hazard/eqk_Rupture_Forecast_Calculator.tex}
 % ------------------------------------------------------------------------------
@@ -214,5 +298,24 @@
 % ==============================================================================
 % ----------------------------------------------------------------- Bibliography
 \bibliographystyle{apalike}
-\bibliography{./Bibliography/hazard.bib,./Bibliography/risk.bib,./Bibliography/sei.bib}
+\bibliography{./Bibliography/hazard,./Bibliography/risk,./Bibliography/sei.bib}
+% ==============================================================================
+% ------------------------------------------------------------------------ Index
+\printindex
+% ==============================================================================
+% ------------------------------------------------------------------- Back Cover
+\newgeometry{hmargin={0cm,-0.4cm},height=29.7cm}
+\thispagestyle{empty}
+\psset{unit=1cm}
+\begin{pspicture}(0,0)(21cm,29.7cm)
+	\psframe[fillstyle=solid,linecolor=gray02,fillcolor=gray02]
+		(0.0cm,0.0cm)(21cm,15.0cm)
+	\psframe[fillstyle=solid,linecolor=white,fillcolor=white]
+		(0.0cm,15.0cm)(21cm,29.7cm)
+	\psframe[fillstyle=solid,linecolor=orange01,fillcolor=orange01]
+		(0.0cm,15.0cm)(21cm,15.5cm)
+	\psframe[fillstyle=solid,linecolor=orange01,fillcolor=orange01]
+		(0.0cm,25.0cm)(21cm,25.1cm)
+\end{pspicture}
+%
 \end{document}
