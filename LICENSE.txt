@@ -1,0 +1,4 @@
+The OpenQuake-Book is intended to provide version controlled, open source documentation for Risk, Hazard and Social Economic Impact relating to the OpenQuake project.
+
+This book is licensed under a Creative Commons Attribution Share Alike 
+license.
