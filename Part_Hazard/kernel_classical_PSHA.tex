@@ -1,7 +1,7 @@
 OpenQuake computes classical PSHA 
 \citep{cornell1968,mcguire2004} following the methodology proposed by 
 \citet{field2003}. This methodology has the distinctive property of performing
-the entire calculation using probabilities, as orginally proposed by 
+the entire calculation using probabilities, as originally proposed by 
 \citet{chiang1984}, instead of working with occurrence rates like in most 
 of the commonest PSHA codes \citep[see for instance][]{bender1987}. 
 %
@@ -10,11 +10,20 @@ probabilistic seismicity occurrence model (in the OpenSHA terminology this is
 defined as the Earthquake Rupture Forecast) from the assumption of a Poissonian 
 temporal occurrence model. 
 %
+The calculation of hazard following this methodology is completely consistent 
+with the most classical procedure, with the only assumption that the hazard 
+of each source produced by multiple occurrences is negligible i.e. the 
+probability that the source will generate two or more occurrences - within the 
+time span fixed for the analysis - is equal to zero. 
+% 
+\citet{pagani2007} considering proved that this assumption holds for the 
+most common situations.
+%
 \citet{field2003} demonstrated the congruence between the original PSHA 
 formulation based on occurrences and the methodology here adopted 
 in the case of a Poissonian temporal model. 
 
-From a more strict calculation perspective two, are the main steps composing the
+Two are the main steps composing this probabilistic seismic hazard calculation 
 procedure:
 \begin{itemize}
 \item Creation of the probabilistic seismicity occurrence model, i.e. a discrete 
@@ -32,9 +41,10 @@ of the current chapter.
 \section{Calculation kernel}
 The classical PSHA calculation kernel takes an Earthquake Rupture Forecast (ERF) 
 as an input; an ERF is simply a list of all the possible ruptures occurring on 
-all the seismic sources included in a Source Model; each rupture $Rup$ is  
-associated with a probability of occurrence in the time span $t$ fixed for the 
-analysis. 
+all the seismic sources included in a Source Model. 
+%
+Each rupture $Rup$ is associated with a probability of occurrence in the time span
+$t$ fixed for the analysis. 
  
 %
 % --------------------------------------------------------------------------------
