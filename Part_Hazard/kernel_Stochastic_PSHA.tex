@@ -1,6 +1,6 @@
-The calculation of stochastic event sets and the corresponding ground motion fields is a methodology tightly connected with a specific seismic risk analysis of common use within the insurance and re-insurance industry (CITATION). 
-%
-OpenQuake given an Earthquake Rupture Forecast can generate a number of seismicity histories, each one representing a possible realisation of the seismicity that the sources included in a Source Model can generate within a given time span (fixed by the user).
+The calculation of stochastic event sets \index{Stochastic event set} and the corresponding ground motion fields is a methodology tightly connected with a specific seismic risk analysis of common use within the insurance and re-insurance industry (CITATION). 
+
+OpenQuake - given a Source System - can generate a number of seismicity histories, each one representing a possible realisation of the seismicity that the sources included in a Source Model can generate within a given time span (fixed by the user).
 % 
 The 
 
@@ -8,17 +8,17 @@ Each rupture in a seismicity history is successively associated with a ground mo
 %
 % ------------------------------------------------------------------------------
 \section{Stochastic Event Set Calculator}
-The Inverse Trasform CITATION is a methodology widely used to randomly sample 
-a discrete probabilistic distribution 
+OpenQuake generates Stochastic Event Sets using the Inverse Trasform Sampling technique, probably the simplest and commonest methodology used to randomly sample probabily distribution starting from its cumulative form. 
 
 %
 % ------------------------------------------------------------------------------
 \section{Ground Motion Fields calculator} 
-We generate ground motion fields using the 
+We generate ground motion fields using the
+
 %
 %  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \subsection{Spatially correlated ground motion fields}
-The genearation of spatially correlated ground motion fields is based on the work of \citet{jayaram2009} where they propose a model - based on a semivarigram - for describing 
+The generation of spatially correlated ground motion fields is based on the work of \citet{jayaram2009} where they propose a model - based on a semivarigram - for describing 
 \begin{equation}
 \gamma(h) = a \left[1-\exp\left(-\frac{3h}{b}\right)\right]
 \end{equation}
