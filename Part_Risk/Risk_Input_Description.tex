@@ -1,24 +1,24 @@
 The two main sources of input information required for a risk calculation with OpenQuake are an exposure model and a vulnerability model (in addition to the calculation type, such as those described in the subsequent chapters, and the region of interest). An exposure model for a given asset category describes, at each location of interest within a given region, the value of each asset typology. The vulnerability model describes the vulnerability characteristics of each asset typology.
 %_________________________________________________________
 \section{Exposure}
-The OpenQuake engine requires an exposure model that needs to be stored according to the respective NRML schema. This file format can withstand several types of exposure elements such as population count, value of dwellings, building count among others. The following parameters are currently being used to describe each asset of the exposure model: 
+The OpenQuake engine requires an exposure model that needs to be stored according to the respective NRML schema. This file format can include several typologies of asset such as population or buildings. The following parameters are currently being used to describe each asset of the exposure model: 
 
 \begin{itemize}
 \item Asset ID: A unique key used to identify the asset instance;
-\item Asset description: Brief description of the asset category;
+\item Asset description: Brief description of the asset typology;
 \item Asset value: Numerical value of the quantity of the asset;
 \item Location: Geographic coordinates of the asset expressed in decimal degrees.
 \end{itemize}
 
-This list of parameters will be further extended in future releases of OpenQuake once more complex data will need to be stored (e.g. value of contents or number of occupants per building).  
+This list of parameters will be further extended in future releases of OpenQuake once more complex data will need to be stored (e.g. value of contents or number of occupants per building at different times of the day).  
 
 \section{Vulnerability}
-Vulnerability is defined as the probability distribution of loss, given an intensity measure level. Vulnerability functions can be derived directly, usually through empirical methods where the losses from past events at given locations are related to the levels of intensity of ground motion at those locations, or they can be derived by combining fragility functions and consequence functions. Fragility functions describe the probability of exceeding a set of limit states, given an intensity measure level; limit states describe the limits to performance levels, such as damage or injury levels. Fragility functions can be derived empirically (using observed data) or analytically, by explicitly modeling the behavior of a given asset typology when subjected to increasing levels of ground motion. Consequence functions describe the probability distribution of loss, given a performance level and are generally derived empirically. 
-Version 0.2 of OpenQuake only supports vulnerability functions. However, the possibility to describe the vulnerability characteristics of the exposure assets with fragility and consequence functions is planned in OpenQuake such that users can view intermediate results of seismic loss calculations, such as the distribution of damage or injury levels. 
+Vulnerability is defined as the probability distribution of loss, given an intensity measure level. Vulnerability functions can be derived directly, usually through empirical methods where the losses from past events at given locations are related to the levels of intensity of ground motion at those locations, or they can be derived by combining fragility functions and consequence functions. Fragility functions describe the probability of exceeding a set of limit states, given an intensity measure level; limit states describe the limits to performance levels, such as damage or injury levels. Fragility functions can be derived by expert-opinion, empirically (using observed data), or analytically, by explicitly modeling the behavior of a given asset typology when subjected to increasing levels of ground motion. Consequence functions describe the probability distribution of loss, given a performance level and are generally derived empirically. 
+Version 0.2 of OpenQuake only supports vulnerability functions. However, the possibility to describe the vulnerability characteristics of the exposed assets with fragility and consequence functions is planned in future releases of OpenQuake such that users can view intermediate results of seismic loss calculations, such as the distribution of damage or injury levels. 
 
 \subsection{Vulnerability Function}
 \subsubsection{Discrete Vulnerability Functions}
-In the current version of OpenQuake (0.2) discrete vulnerability functions are used to directly estimate human and economic losses in OpenQuake. Discrete vulnerability functions are described by a list of intensity measure levels and corresponding mean loss ratios (ratio of loss to exposed value), associated coefficients of variation and probability distribution. The uncertainty on the loss ratio is assumed in OpenQuake v0.2 to follow a lognormal distribution, however different probabilistic distributions for the uncertainty will be developed in future versions such as the normal or beta distribution. Figure \ref{fig:VFDiscrete} illustrates a discrete vulnerability function.
+In the current version of OpenQuake (V0.2) discrete vulnerability functions are used to directly estimate human and economic losses. Discrete vulnerability functions are described by a list of intensity measure levels and corresponding mean loss ratios (the ratio of mean loss to exposed value), associated coefficients of variation and probability distributions. The uncertainty on the loss ratio is assumed in OpenQuake v0.2 to follow a lognormal distribution, however different probabilistic distributions for the uncertainty will be developed in future versions such as the beta distribution. Figure \ref{fig:VFDiscrete} illustrates a discrete vulnerability function.
 
 \begin{figure}[ht]
 \centering
@@ -28,7 +28,7 @@ In the current version of OpenQuake (0.2) discrete vulnerability functions are u
 \end{figure}
 
 \subsubsection{Continuous Vulnerability Functions}
-In version 0.3 of OpenQuake, continuous vulnerability functions will be implemented. Continuous vulnerability functions are described by continuous distributions of mean loss ratio and coefficient of variation with ground motion intensity. The following figure illustrates this type of functions.
+In version 0.3 of OpenQuake, continuous vulnerability functions will be implemented. Continuous vulnerability functions are described by continuous distributions of mean loss ratio and coefficient of variation with ground motion intensity. The following figure illustrates this type of function.
 
 \begin{figure}[ht]
 \centering
@@ -38,11 +38,11 @@ In version 0.3 of OpenQuake, continuous vulnerability functions will be implemen
 \end{figure}
 
 \subsection{Fragility Functions}
-Fragility functions describe the probability of exceeding a set of limit states, given an intensity measure level. When the asset category concerns structures (e.g. buildings), the intensity measure can either be structure-independent or structure-dependent. The former can be calculated directly from recorded measurements of ground shaking (e.g. peak ground acceleration, peak ground velocity, spectral acceleration at a given period of vibration, or even macroseismic intensity). The latter requires information on the characteristics of the structures in order to be calculated, for example spectral acceleration at the fundamental period of vibration, or spectral displacement at the limit state period of vibration. The calculation of these characteristics might be through a simple formula (e.g. a yield period-height equation, see e.g. \citet{CrowleyPinho2004} ) or through so-called non-linear static methods, which are needed when the intensity measure is a non-linear response quantity such as spectral displacement at the limit state period of vibration (see e.g. \citet{FEMA440ATC2005}).
+Fragility functions describe the probability of exceeding a set of limit states, given an intensity measure level. When the asset category concerns structures (e.g. buildings), the intensity measure can either be structure-independent or structure-dependent. The former can be calculated directly from recorded measurements of ground shaking (e.g. peak ground acceleration, peak ground velocity, spectral acceleration at a given period of vibration, or even macroseismic intensity). The latter requires information on the characteristics of the structures in order to be calculated, for example spectral acceleration at the fundamental period of vibration, or spectral displacement at the limit state period of vibration. The calculation of these structural characteristics might be through a simple formula (e.g. a yield period-height equation, see e.g. \citet{CrowleyPinho2004} ) or through so-called non-linear static methods, which are needed when the intensity measure is a non-linear response quantity such as spectral displacement at the limit state period of vibration (see e.g. \citet{FEMA440ATC2005}).
 Discrete and continuous fragility functions with structure-independent intensity measures aim to be implemented in version 0.3 of OpenQuake. Fragility functions with structure-dependent intensity measures (and the methods necessary to calculate them) will be planned for the version 0.5 release.
 
 \subsubsection{Discrete Fragility Functions}
-Fragility functions can be defined in a discrete way by providing for each limit state a list of intensity measure levels and respective probabilities of exceedance. Figure \ref{fig:FFDiscrete} presents a set of discrete fragility functions using a macroseismic intensity.
+Fragility functions can be defined in a discrete way by providing for each limit state a list of intensity measure levels and respective probabilities of exceedance. Figure \ref{fig:FFDiscrete} presents a set of discrete fragility functions using a macroseismic intensity measure.
 
 \begin{figure}[ht]
 \centering
@@ -62,7 +62,7 @@ Continuous fragility functions are defined by the parameters of a cumulative dis
 \end{figure}
 
 \subsection{Consequence Functions}
-Consequence functions describe the probability distribution of loss, given a performance level. For example, if the asset category is buildings and the performance level is significant damage, the consequence function will describe the mean loss ratio, coefficient of variation and probability distribution. The following figure presents the mean damage ratio for a set of performance levels proposed by two different sources:
+Consequence functions describe the probability distribution of loss, given a performance level. For example, if the asset category is buildings and the performance level is significant damage, the consequence function will describe the mean loss ratio, coefficient of variation and probability distribution for that level of damage. The following figure presents the mean damage ratio for a set of performance levels proposed by two different sources:
 
 \begin{figure}[ht]
 \centering

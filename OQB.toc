@@ -46,11 +46,11 @@
 \contentsline {section}{\numberline {9.2}Vulnerability}{39}
 \contentsline {subsection}{\numberline {9.2.1}Vulnerability Function}{40}
 \contentsline {subsubsection}{\numberline {9.2.1.1}Discrete Vulnerability Functions}{40}
-\contentsline {subsubsection}{\numberline {9.2.1.2}Continuous Vulnerability Functions}{41}
-\contentsline {subsection}{\numberline {9.2.2}Fragility Functions}{41}
-\contentsline {subsubsection}{\numberline {9.2.2.1}Discrete Fragility Functions}{42}
-\contentsline {subsubsection}{\numberline {9.2.2.2}Continuous Fragility Functions}{42}
-\contentsline {subsection}{\numberline {9.2.3}Consequence Functions}{43}
+\contentsline {subsubsection}{\numberline {9.2.1.2}Continuous Vulnerability Functions}{40}
+\contentsline {subsection}{\numberline {9.2.2}Fragility Functions}{40}
+\contentsline {subsubsection}{\numberline {9.2.2.1}Discrete Fragility Functions}{41}
+\contentsline {subsubsection}{\numberline {9.2.2.2}Continuous Fragility Functions}{41}
+\contentsline {subsection}{\numberline {9.2.3}Consequence Functions}{42}
 \contentsline {chapter}{\numberline {10}Deterministic event based calculator}{45}
 \contentsline {section}{\numberline {10.1}Method A}{46}
 \contentsline {subsection}{\numberline {10.1.1}Description}{46}

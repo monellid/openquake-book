@@ -1,4 +1,4 @@
-The deterministic event-based calculator is capable of computing losses and loss statistics for a single event for a collection of assets. Depending of the type of hazard input that is provided, two separate approaches can be followed. In the first one, the calculator uses two maps, one with the distribution of the mean ground motion and a second one with the associated aleatory variability. In the second approach, the event is repeated many times to model the variation in the inter-event variability and for each event, a ground motion field is generated taking into account the intra-event variability (and possibly the spatial correlation of the latter). The following scheme describes the architecture of this calculator:
+The deterministic event-based calculator is capable of computing losses and loss statistics for a single event for a collection of assets. Depending of the type of hazard input that is provided, two separate approaches can be followed. In the first one, the calculator uses two maps, one with the distribution of the mean ground motion and a second one with the associated aleatory variability. In the second approach, the event is repeated many times to model the variation in the inter-event variability and for each event, a ground motion field is generated taking into account the intra-event variability (and possibly the spatial correlation of the latter). The following scheme presents the architecture of this calculator:
 
 \begin{figure}[ht]
 \centering
@@ -11,7 +11,7 @@ The deterministic event-based calculator is capable of computing losses and loss
 \subsection{Description}
 In this approach, after providing the two aforementioned maps, the mean ground motion and coefficient of variation at each site are used together with the assigned vulnerability function for each asset  to calculate a mean loss ratio. The aleatory variability in the ground motion is combined with the uncertainty in the vulnerability functions through the total probability theorem in order to calculate the standard deviation of the loss ratio for each asset.
 
-\subsection{Calculations workflow}
+\subsection{Calculation workflow}
 
 To compute the mean loss:
 
@@ -26,7 +26,7 @@ Lower bound = \frac{IML_n+IML_{n-1}}{2}
 Upper bound = \frac{IML_{n+1}+IML_{n}}{2}
 \end{equation}
 
-The following figure illustrates the intervals that were computed based on 4 intensity measure levels that compose a given vulnerability function:
+The following figure illustrates the intervals that were computed based on 4 intensity measure levels that comprise a given vulnerability function:
 
 \begin{figure}[ht]
 \centering
@@ -35,7 +35,7 @@ The following figure illustrates the intervals that were computed based on 4 int
 \label{fig:VF_intervals}
 \end{figure}
 
-Note that for the first and last intensity measure level, there are not any value before or after respectively. In these cases, the lower and upper bound need to be compute based on the distance between the respective intensity measure level and the bound that was computed through one of the aforementioned formulae. Thus, the lower bound for the first intensity measure level can be given by:
+Note that for the first and last intensity measure level, there are no values before or after respectively. In this case, the lower and upper bound need to be computed based on the distance between the respective intensity measure level and the bound that was computed through one of the aforementioned formulae. Thus, the lower bound for the first intensity measure level can be given by:
 
 \begin{equation}
 Lower bound= IML_1-\frac{IML_2+IML_{1}}{2}
@@ -53,7 +53,7 @@ Upper bound[IML_{n}]  = IML_{n}+\frac{IML_{n}-IML_{n-1}}{2}
 PO[IML_{n}]  = F(UB,\mu,\sigma)-F(LB,\mu,\sigma)
 \end{equation}
 
-Where $F$ stands for the cumulative distribution function, $UB$ and $LB$ stand for the upper and lower bound respectively of the $IML_n$ and $\mu$ and $\sigma$ stand for the mean ground motion and associated standard deviation of the normal distribution of the logarithm of the ground motion values.
+Where $F$ stands for the cumulative distribution function, $UB$ and $LB$ stand for the upper and lower bound respectively of the $IML_n$ and $\mu$ and $\sigma$ stand for the logarithmic mean and standard deviation i.e. the mean ground motion and associated standard deviation of the normal distribution of the natural logarithm of the ground motion values.
 
 \item Then, the mean loss ratio for each asset can be computed through the formula:
 
@@ -61,11 +61,11 @@ Where $F$ stands for the cumulative distribution function, $UB$ and $LB$ stand f
 LR  = \sum_{n=1}^mPO[IML_n] \times LR_n
 \end{equation}
 
-\item The absolute loss can be computed by multiplying the mean loss ratio by the value of the asset contained on the exposure model file.
+\item The absolute mean loss can be computed by multiplying the mean loss ratio by the value of the asset contained on the exposure model file.
 
 \end{enumerate}
 
-To compute the standard deviation of the mean loss:
+To compute the standard deviation of the loss:
 
 \begin{enumerate}
 \item In order to compute this parameter, the total probability theorem needs to be used. The first step is to compute $E[LR_n^2]$, which is given by the following formula:
@@ -82,7 +82,7 @@ Where $SD[LR_n]$ stands for the standard deviation of the distribution of loss r
 E[LR^2]=\sum_{n=1}^mPO[IML_n] \times E[LR_n]^2
 \end{equation}
 
-\item Subsequently the standard deviation of the mean loss ratio can be computed using the expression:
+\item Subsequently the standard deviation of the loss ratio can be computed using the expression:
 
 \begin{equation}
 SD[LR]=\sqrt{E[LR^2]-E[LR]^2}
@@ -90,34 +90,34 @@ SD[LR]=\sqrt{E[LR^2]-E[LR]^2}
 
 Where $E[LR]$ stands for the mean loss ratio computed previously.
 
-\item The standard deviation of the mean loss can finally be computed by multiplying the standard deviation of the mean loss ratio by the value of the respective asset.
+\item The absolute standard deviation of the loss can finally be computed by multiplying the standard deviation of the loss ratio by the value of the respective asset.
 
 \end{enumerate}
 
 \section{Method B}
 \subsection{Description}
-In this approach, for each ground motion field, the intensity measure level at a given site is used to calculate the mean  and standard deviation of loss ratio using the vulnerability functions for each asset contained in the exposure file. Using these results, the mean and standard deviation of loss ratio across all events can be calculated. Again, loss ratios are converted into losses by multiplying by the value of the asset given in the exposure file. For this method, it is possible to aggregate the losses throughout the region and to compute the standard deviation of the aggregated loss. 
+In this approach, for each ground motion field, the intensity measure level at a given site is used to calculate the mean and standard deviation of loss ratio using the vulnerability functions for each asset contained in the exposure file. Using these results, the mean and standard deviation of loss ratio across all events can be calculated. Again, loss ratios are converted into losses by multiplying by the value of the asset given in the exposure file. For this method, it is possible to aggregate the losses throughout the region and to compute the standard deviation of the aggregated loss. 
 
-\subsection{Calculations workflow}
+\subsection{Calculation workflow}
 
 To compute the mean loss:
 
 \begin{enumerate}
-\item For each ground motion field, the intensity measure levels are related with the vulnerability functions to compute the loss ratio for each asset. Since currently the vulnerability functions are being defined in a discrete way, it is quite  probable that the intensity measure level provided by the ground motion field is not contained in the vulnerability function. In these cases, linear interpolation methods are being employed to derived .
+\item For each ground motion field, the intensity measure levels are related with the vulnerability functions to compute the mean loss ratio for each asset. Since currently the vulnerability functions are being defined in a discrete way, it is quite probable that the intensity measure level provided by the ground motion field is not contained in the vulnerability function. In these cases, linear interpolation methods are being employed to derive the mean loss ratio at the intensity measure level of interest.
 
-\item Once the loss ratios for all assets across all ground motion fields were computed, the mean loss ratio for each asset can be calculated through the formula:
+\item The mean loss ratio for each asset across all possible simulations of the deterministic event can be calculated through the formula:
 
 \begin{equation}
 LR=\frac{\sum^m_{n=1}LR_n|IML}{m}
 \end{equation}
 
-Where $m$ stands for the number of ground motion fields.
+Where $m$ stands for the number of ground motion fields simulated.
 
-\item The mean loss can then be derived by multiplying the mean loss ratio for the value of the asset contained in the exposure model file.
+\item The mean loss can then be derived by multiplying the mean loss ratio by the value of the asset contained in the exposure model file.
 
 \end{enumerate}
 
-To compute the standard deviation of the mean loss:
+To compute the standard deviation of the loss:
 
 \begin{enumerate}
 
@@ -135,7 +135,7 @@ Where $SD[LR_n]$ stands for the standard deviation of the distribution of loss r
 E[LR^2]=\frac{\sum_{n=1}^m E[LR_n]^2}{m}
 \end{equation}
 
-\item The standard deviation of the mean loss ratio can be computed using the expression:
+\item The standard deviation of the loss ratio can be computed using the expression:
 
 \begin{equation}
 SD[LR]=\sqrt{E[LR^2]-E[LR]^2}
@@ -143,7 +143,7 @@ SD[LR]=\sqrt{E[LR^2]-E[LR]^2}
 
 Where $E[LR]$ stands for the mean loss ratio computed previously.
 
-\item The standard deviation of the mean loss can finally be computed by multiplying the standard deviation of the mean loss ratio by the value of the respective asset.
+\item The standard deviation of the absolute loss can finally be computed by multiplying the standard deviation of the loss ratio by the value of the respective asset.
 
 \end{enumerate}
-
+

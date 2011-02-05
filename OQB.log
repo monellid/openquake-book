@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2011.1.18)  4 FEB 2011 12:00
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2011.1.18)  4 FEB 2011 15:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,29 +615,29 @@ Chapter 9.
 File: ./Figures/Part_Risk/VFDiscrete.eps Graphic file (type eps)
 
 <./Figures/Part_Risk/VFDiscrete.eps>
-File: ./Figures/openquake_logo1.eps Graphic file (type eps)
- <./Figures/openquake_logo1.eps> [40]
 File: ./Figures/Part_Risk/VFContinuous.eps Graphic file (type eps)
+ <./Figures/Part_Risk/VFContinuous.eps>
+File: ./Figures/openquake_logo1.eps Graphic file (type eps)
 
-<./Figures/Part_Risk/VFContinuous.eps>
+<./Figures/openquake_logo1.eps> [40]
+File: ./Figures/Part_Risk/FFDiscrete.eps Graphic file (type eps)
+ <./Figures/Part_Risk/FFDiscrete.eps>
+File: ./Figures/Part_Risk/FFContinuous.eps Graphic file (type eps)
+
+<./Figures/Part_Risk/FFContinuous.eps>
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
  <./Figures/openquake_logo1.eps> [41]
-File: ./Figures/Part_Risk/FFDiscrete.eps Graphic file (type eps)
-
-<./Figures/Part_Risk/FFDiscrete.eps>
-File: ./Figures/Part_Risk/FFContinuous.eps Graphic file (type eps)
- <./Figures/Part_Risk/FFContinuous.eps>
-File: ./Figures/openquake_logo1.eps Graphic file (type eps)
-
-<./Figures/openquake_logo1.eps> [42]
 File: ./Figures/Part_Risk/ConsequenceFunction.eps Graphic file (type eps)
 
 <./Figures/Part_Risk/ConsequenceFunction.eps>)
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
  <./Figures/openquake_logo1.eps>
-[43]
+[42]
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
- <./Figures/openquake_logo1.eps> [44
+ <./Figures/openquake_logo1.eps> [43]
+File: ./Figures/openquake_logo1.eps Graphic file (type eps)
+ <./Figures/openquake_logo1.eps>
+[44
 
 ]
 Chapter 10.
@@ -757,4 +757,4 @@ Here is how much of TeX's memory you used:
  714 hyphenation exceptions out of 8191
  55i,11n,92p,1251b,538s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on OQB.dvi (76 pages, 144860 bytes).
+Output written on OQB.dvi (76 pages, 145000 bytes).
