@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2011.1.18)  4 FEB 2011 15:17
-=======
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2011.1.18)  4 FEB 2011 14:31
->>>>>>> a051aa8216f2379f263448f82f23ff491ae35eab
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2011.1.18)  7 FEB 2011 09:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -748,12 +744,6 @@ File: ./Figures/Part_Risk/VFDiscrete.eps Graphic file (type eps)
 File: ./Figures/Part_Risk/VFContinuous.eps Graphic file (type eps)
  <./Figures/Part_Risk/VFContinuous.eps>
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
-<<<<<<< HEAD
-
-<./Figures/openquake_logo1.eps> [40]
-File: ./Figures/Part_Risk/FFDiscrete.eps Graphic file (type eps)
- <./Figures/Part_Risk/FFDiscrete.eps>
-=======
 
 <./Figures/openquake_logo1.eps> [40]
 File: ./Figures/Part_Risk/FFDiscrete.eps Graphic file (type eps)
@@ -761,23 +751,19 @@ File: ./Figures/Part_Risk/FFDiscrete.eps Graphic file (type eps)
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
 
 <./Figures/openquake_logo1.eps> [41]
->>>>>>> a051aa8216f2379f263448f82f23ff491ae35eab
 File: ./Figures/Part_Risk/FFContinuous.eps Graphic file (type eps)
-
-<./Figures/Part_Risk/FFContinuous.eps>
+ <./Figures/Part_Risk/FFContinuous.eps>
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
- <./Figures/openquake_logo1.eps> [41]
+
+<./Figures/openquake_logo1.eps> [42]
 File: ./Figures/Part_Risk/ConsequenceFunction.eps Graphic file (type eps)
 
 <./Figures/Part_Risk/ConsequenceFunction.eps>)
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
  <./Figures/openquake_logo1.eps>
-[42]
+[43]
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
- <./Figures/openquake_logo1.eps> [43]
-File: ./Figures/openquake_logo1.eps Graphic file (type eps)
- <./Figures/openquake_logo1.eps>
-[44
+ <./Figures/openquake_logo1.eps> [44
 
 ]
 Chapter 10.
@@ -794,19 +780,19 @@ File: ./Figures/openquake_logo1.eps Graphic file (type eps)
 
 <./Figures/openquake_logo1.eps> [47]
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
- <./Figures/openquake_logo1.eps> [48])
+ <./Figures/openquake_logo1.eps> [48]
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
 
-<./Figures/openquake_logo1.eps> [49]
+<./Figures/openquake_logo1.eps> [49])
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
- <./Figures/openquake_logo1.eps> [50
-
-]
+ <./Figures/openquake_logo1.eps> [50]
 Chapter 11.
 (./Part_Risk/Classical_PSHA_Based.tex
 File: ./Figures/Part_Risk/Scheme_PSHA_calc.eps Graphic file (type eps)
 
-<./Figures/Part_Risk/Scheme_PSHA_calc.eps> [51]
+<./Figures/Part_Risk/Scheme_PSHA_calc.eps> [51
+
+]
 File: ./Figures/Part_Risk/ProbOccurrence.eps Graphic file (type eps)
 
 <./Figures/Part_Risk/ProbOccurrence.eps>
@@ -833,14 +819,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
 ]
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
- <./Figures/openquake_logo1.eps> [56])
+ <./Figures/openquake_logo1.eps> [56]
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
  <./Figures/openquake_logo1.eps>
-[57]
+[57])
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
- <./Figures/openquake_logo1.eps> [58
+ <./Figures/openquake_logo1.eps> [58] [59
 
-] [59] [60]
+] [60]
 (./Part_SEIA/introduction.tex)
 File: ./Figures/openquake_logo1.eps Graphic file (type eps)
  <./Figures/openquake_logo1.eps> [61]
@@ -936,10 +922,6 @@ Here is how much of TeX's memory you used:
  11894 multiletter control sequences out of 15000+200000
  14053 words of font info for 50 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 55i,12n,92p,1251b,562s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,92p,1207b,562s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-<<<<<<< HEAD
-Output written on OQB.dvi (76 pages, 145000 bytes).
-=======
-Output written on OQB.dvi (78 pages, 171220 bytes).
->>>>>>> a051aa8216f2379f263448f82f23ff491ae35eab
+Output written on OQB.dvi (78 pages, 171896 bytes).

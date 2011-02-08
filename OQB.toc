@@ -46,30 +46,23 @@
 \contentsline {subsection}{\numberline {9.2.1}Vulnerability Function}{40}
 \contentsline {subsubsection}{\numberline {9.2.1.1}Discrete Vulnerability Functions}{40}
 \contentsline {subsubsection}{\numberline {9.2.1.2}Continuous Vulnerability Functions}{40}
-<<<<<<< HEAD
-\contentsline {subsection}{\numberline {9.2.2}Fragility Functions}{40}
-\contentsline {subsubsection}{\numberline {9.2.2.1}Discrete Fragility Functions}{41}
-\contentsline {subsubsection}{\numberline {9.2.2.2}Continuous Fragility Functions}{41}
-\contentsline {subsection}{\numberline {9.2.3}Consequence Functions}{42}
-=======
 \contentsline {subsection}{\numberline {9.2.2}Fragility Functions}{41}
 \contentsline {subsubsection}{\numberline {9.2.2.1}Discrete Fragility Functions}{41}
 \contentsline {subsubsection}{\numberline {9.2.2.2}Continuous Fragility Functions}{42}
 \contentsline {subsection}{\numberline {9.2.3}Consequence Functions}{43}
->>>>>>> a051aa8216f2379f263448f82f23ff491ae35eab
 \contentsline {chapter}{\numberline {10}Deterministic event based calculator}{45}
 \contentsline {section}{\numberline {10.1}Method A}{45}
 \contentsline {subsection}{\numberline {10.1.1}Description}{45}
-\contentsline {subsection}{\numberline {10.1.2}Calculations workflow}{46}
+\contentsline {subsection}{\numberline {10.1.2}Calculation workflow}{46}
 \contentsline {section}{\numberline {10.2}Method B}{48}
 \contentsline {subsection}{\numberline {10.2.1}Description}{48}
-\contentsline {subsection}{\numberline {10.2.2}Calculations workflow}{49}
+\contentsline {subsection}{\numberline {10.2.2}Calculation workflow}{49}
 \contentsline {chapter}{\numberline {11}Classical PSHA based calculator}{51}
 \contentsline {section}{\numberline {11.1}Description}{51}
-\contentsline {section}{\numberline {11.2}Calculations workflow}{51}
+\contentsline {section}{\numberline {11.2}Calculation workflow}{51}
 \contentsline {chapter}{\numberline {12}Probabilistic event based calculator}{55}
 \contentsline {section}{\numberline {12.1}Description}{55}
-\contentsline {section}{\numberline {12.2}Calculations workflow}{56}
+\contentsline {section}{\numberline {12.2}Calculation workflow}{56}
 \contentsline {part}{IV\hspace {1em}Socio-Economic Impact Assessment}{59}
 \contentsline {part}{V\hspace {1em}Modeller's Toolkit}{63}
 \contentsline {chapter}{\numberline {13}Introduction}{65}
