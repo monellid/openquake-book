@@ -1,12 +1,53 @@
 Probabilistic Seismic Hazard is nowadays a well established methodology, largely founded on the works of \citeauthor{cornell1968} and \citeauthor{esteva1968}, both published at the end of the 1960's. 
 %
-The development of PSHA within the latest four decades did not change much the original concept but made calculations more rigorous and accurate, especially with respect to treatment of uncertainties. 
-%
-The evolution of PSHA methodologies proceeded in parallel with the development of instrumental seismology and computing hardware. USGS and UNAM covered an important role in the development of PSHA. Computer codes such as EQRISK \citep{mcguire1976} and different SEISRISK versions \citep{bender1982,bender1987} traced the advancement of PSHA calculation within
+The development of PSHA within the latest four decades did not change much the original concept but made calculations more rigorous and accurate, especially with respect to the treatment of uncertainties. 
+
+The evolution of PSHA methodologies proceeded in parallel with the development of instrumental seismology and hardware computing power. Computer codes such as EQRISK \citep{mcguire1976} and different SEISRISK versions \citep{bender1982,bender1987} traced the advancement of PSHA calculation within
 the last part of the 20th century.
-% 
-Nowadays the most computationally intensive PSHA models available are the ones developed for site-specific PSHA analyses, such as the ones performed for special installations, and the regional PSHA input models. In the first case most of the demand comes from the complexity of the input whilst in the second case is the number of sites considered that makes calculation heavy.  
+
+At the present time, the most computationally intensive PSHA models available are the ones developed for site-specific PSHA analyses, such as the ones performed for special installations, and the regional PSHA input models. In the first case most of the computetion demand comes from the complexity of the input whilst in the second case is the number of sites considered that makes calculations particularly heavy.  
 %
 % ------------------------------------------------------------------------------
-\section{OpenQuake-hazard}
+\section{OpenQuake-hazard: main concepts}
 OpenQuake-hazard leverages from OpenSHA (http://www.opensha.org) - an open-source, Java-based platform for conducting Seismic Hazard Analysis - and it is developed in collaboration with the OpenSHA team. 
+
+Schematically, the procedure OpenQuake follows to compute the hazard is the following:
+%
+\begin{enumerate}
+%
+\item \emph{Read the PSHA input model - i.e. the union of the Seismic Sources System and the GMPE system - and calculation settings.}
+	\index{Seismic Sources System}
+	\index{PSHA!Input model}
+	\index{Ground Motion Prediction Equations System}
+	%
+	
+	The Seismic Source System is an object that contains the information necessary to create one or several Source Model, eventually by taking into account the epistemic uncertainties. 
+	%
+	In particular, the Seismic Sources System contains:
+	\begin{itemize}
+	\item One or several Initial Source Models (ISMs);
+	\index{Logic Tree!Seismic source}
+	\item One logic tree - the Seismic Source logic tree - describing epistemic uncertainties connected with the objects and parameters characterizing the initial source models.
+	\end{itemize}
+	%
+	The GMPEs System is an object that contains the information necessary to create one or several GMPE model, eventually by taking into account the epistemic uncertainties. 
+	\begin{itemize}
+	\item One or several GMPES (ISMs);
+	\index{Logic Tree!Ground Motion Prediction Equations}
+	\item One logic tree - the Ground Motion Prediction Equations logic tree - describing epistemic uncertainties connected with the objects and parameters characterizing the selected GMPEs.	
+	\end{itemize}
+
+%
+\item \emph{Process the logic tree structures to account for epistemic uncertainties connected with the seismic sources and the ground motion prediction equations and create Source Models (SMs) and Ground Motion Prediction Equations Models (GMPEM)}.
+	\index{Source Model}
+	\index{Ground Motion Model}
+	%
+	
+	A Source Model contains the information necessary to create an Earthquake Rupture Forecast (i.e. probabilistic seismicity occurrence model) without considering epistemic uncertainties.
+	
+	A Ground Motion Prediction Equation Model includes the information necessary to compute hazard using a source model. 
+
+\item Compute the hazard considering as many Source Models and Ground Motion Models as need to adequately characterise uncertainties.
+\item Post-process the results obtained for distinct calculations.
+\end{enumerate}
+%

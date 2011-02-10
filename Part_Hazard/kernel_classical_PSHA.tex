@@ -1,55 +1,39 @@
 OpenQuake computes classical PSHA 
-\citep{cornell1968,mcguire2004} following the methodology proposed by 
+\citep{cornell1968,mcguire2004} following the methodology presented by 
 \citet{field2003}. This methodology has the distinctive property of performing
 the entire calculation using probabilities, as originally proposed by 
 \citet{chiang1984}, instead of working with occurrence rates like in most 
 of the commonest PSHA codes \citep[see for instance][]{bender1987}. 
 %
-This methodology has the clear advantage of decoupling the creation of the 
-probabilistic seismicity occurrence model (in the OpenSHA terminology this is 
-defined as the Earthquake Rupture Forecast) from the assumption of a Poissonian 
-temporal occurrence model. 
-%
-The calculation of hazard following this methodology is completely consistent 
-with the most classical procedure, with the only assumption that the hazard 
-of each source produced by multiple occurrences is negligible i.e. the 
-probability that the source will generate two or more occurrences - within the 
-time span fixed for the analysis - is equal to zero. 
-% 
-\citet{pagani2007} considering proved that this assumption holds for the 
-most common situations.
-%
-\citet{field2003} demonstrated the congruence between the original PSHA 
-formulation based on occurrences and the methodology here adopted 
-in the case of a Poissonian temporal model. 
+The OpenSHA methodology has also the clear advantage of decoupling the creation of the probabilistic seismicity occurrence model (in the OpenSHA terminology this is defined as the Earthquake Rupture Forecast) from the assumption of a Poissonian temporal occurrence model. 
 
-Two are the main steps composing this probabilistic seismic hazard calculation 
+As demonstrated by \citet{field2003} - under the the assumption that the contribution to hazard coming from multiple occurrences occurring on a given  seismic source is negligible i.e. the probability that a source will generate two or more occurrences within the time span fixed for the analysis is equal to zero - the calculation of hazard following this methodology is completely consistent with the most classical procedure.
+% 
+\citet{pagani2007} proved that this assumption holds at least for some prototypal situations.
+
+Two are the main steps composing the OpenSHA seismic hazard calculation 
 procedure:
+%
 \begin{itemize}
 \item Creation of the probabilistic seismicity occurrence model, i.e. a discrete 
-distribution giving the probability of occurrence of each possible rupture 
-occurring on one of the seismic sources defined in the PSHA input model in a  
-given time span. This step of the procedure was already discussed within 
+distribution giving the probability of occurrence - in a given time span - of each possible rupture occurring on one of the seismic sources defined in the PSHA input model. This step of the procedure was already discussed in 
 Chapter \ref{chap:erf} at page \pageref{chap:erf}.
+%
 \item Calculation of hazard at the site by combining the probabilistic 
-occurrence model with a ground motion prediction equation (also Intensity 
-Measure Relationship in the OpenSHA jargon). This second step will the topic 
-of the current chapter.
+seismicity occurrence model with a ground motion prediction equation (also Intensity Measure Relationship in the OpenSHA jargon). This second step will be the topic of the current chapter.
 \end{itemize}
 %
 % --------------------------------------------------------------------------------
-\section{Calculation kernel}
-The classical PSHA calculation kernel takes an Earthquake Rupture Forecast (ERF) 
-as an input; an ERF is simply a list of all the possible ruptures occurring on 
-all the seismic sources included in a Source Model. 
-%
-Each rupture $Rup$ is associated with a probability of occurrence in the time span
-$t$ fixed for the analysis. 
- 
-%
-% --------------------------------------------------------------------------------
 \section{Hazard calculation: traditional formulation in terms of probabilities}
-Following \cite{field2003}, the traditional formulation in terms of probabilities:
+In the simplest case, the classical PSHA calculation kernel takes as an input: 
+%
+\begin{itemize}
+\item An Earthquake Rupture Forecast (ERF - also called Probabilistic Seismicity Occurrence Model). An ERF is a list of all the possible ruptures occurring on all the seismic sources included in a Source Model. Each rupture $Rup$ is associated with a probability of occurrence $P(Rup|t)$ referred to the time span $t$ fixed for the analysis. 
+\item A Ground Motion Prediction Equation (GMPE). A GMPE is an equation that - given some fundamental parameters characterizing the source, the propagation
+path and the site (in the simplest case magnitude, distance and V$_\text{S,30}$) - computes the value $GM$ of a (scalar) parameter describing ground motion intensity. $gm$ is always accompanied by a standard deviation value $\sigma_{gm,T}$ specifying the aleatoric variability associated to $gm$.
+\end{itemize}
+%
+Following \cite{field2003}, the exceedance of a value probabilities :
 %
 \begin{equation}
 P(U\geq u)= 

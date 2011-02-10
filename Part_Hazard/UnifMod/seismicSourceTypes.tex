@@ -1,0 +1,144 @@
+% ------------------------------------------------------------------------------
+\section[OpenQuake seismic source typologies]{OpenQuake seismic source typologies}
+%  
+A PSHA input model - excluding memory resources constraints - contains an unlimited number of sources specified in agreement with the typologies supported by OpenQuake.
+Each source type supported by OpenQuake is described by a limited numeber of parameters; in the following sections we provide a detailed description of the source typologies currently supported.
+%
+%  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsection{Seismic source typologies description}
+\label{hazard:seismic_source_types}
+%
+OpenQuake, at present time, provides four seismic source typologies, for the 
+most part defined in the course of the GEM1 project \citep{pagani2010}. These are:
+\begin{itemize}
+\item Area source - So far, the most frequently adopted source type in national and regional PSHA models.
+\item Grid source - Grid sources can be considered a replacement for area 
+sources since they both model distributed seismicity;
+\item Simple fault sources - Simple faults are the easiest way to
+to specify a fault source in OpenQuake. This typology is usually adopted to describe shallow seismogenic fault sources.
+\item Complex fault sources - Complex faults are habitually adopted to model
+subduction interface sources with a complex geometry. 
+\end{itemize}
+
+These are the basic assumptions accepted in the definition of these source typologies:
+\begin{itemize}
+\item In the case of area and fault sources, the seismicity is homogeneously 
+distributed over the source; 
+\item Seismicity temporal occurrence follows a Poissonian model; 
+\item The frequency-magnitude distribution can be approximated to an evenly 
+discretized distribution. 
+\end{itemize}
+%
+%  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+\subsubsection{Area sources}
+\label{hazard:seismic_source_types:areaSources}
+\index{Source type!area} 
+\index{Area source|see{Source type}}
+Area sources model the seismicity occurring over wide areas where fault 
+sources identification or characterization - i.e. unambiguous definition 
+of seismicity occurrence parameters - is difficult. 
+
+The \citet{sshac1997} defined three main types of area seismic sources using as 
+a discriminant their extension:
+\begin{enumerate}
+\item Area sources enclosing concentrated zones of seismicity;
+\item Regional area sources;
+\item Background area sources.
+\end{enumerate}
+The criteria adopted for their definition - and the related uncertainties - vary according to each area source type. From a hazard computation standpoint we do not introduce any difference between these three area types.
+	\marginpar{marco: In the future we may support a specialized background 
+	area source type}
+%
+%  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+\paragraph{Parameters}
+\begin{itemize}
+\item A polygon that identifies the external border of the area. Eventually, 
+internal borders can be specified so as to create holes inside an area
+	\textcolor{red}{[The current version of OQ doesn't support the definition of internal borders]}
+\item One (or many) combinations of the following objects:
+\begin{itemize}
+	\item A discrete Frequency-Magnitude Distribution (FMD)
+	\item (optional) Strike, dip, and rake angles characterizing the seismicity  in the corresponding FMD.
+	For example, \cite{coppersmith2009} defines a discrete distribution of strike values (dip is not considered because the source-site metrics they use is the Joyner-Boore distance). 
+\end{itemize}
+This description permits the accurate characterization of seismicity occurrence within an area by explicitly distributing the seismicity on the existing faulting trends. 
+\item An array specifying the depth to the top of rupture dependency on magnitude. The array contains two columns and one or many $<$depth, magnitude$>$ tuples. Each tuple specifies the depth to the top of rupture for magnitudes equal or greater than the corresponding value. 
+\item A value to indicate the hypocentral depth in case of punctual sources. 
+By convention all the events with magnitude lower than the lowest value of magnitude contained in the depth to the top of rupture array are modelled as punctual source. On the opposite, ruptures with magnitude equal or greater than the lowest value of magnitude contained in the depth to the top of rupture array are modelled considering their finite dimensions. The finite dimension of the rupture is computed using a magnitude-area or magnitude-length relationship specifies in the calculation settings file (in future versions of OQ we will allow the user to specify for each tectonic region the corresponding magnitude-scaling relationship).
+\end{itemize}
+%
+%  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+\subsubsection{Grid sources}
+\index{Source type!grid}
+\index{Grid source|see{Source type}}
+A grid source  is a typology used to model distributed seismicity - usually of low and intermediate magnitude.
+%
+Grid sources can be considered a PSHA source model alternative to area 
+sources, since they both try to represent distributed seismicity. Grid sources 
+usually derive from the application of seismicity smoothing algorithms 
+\citep{frankel1995,woo1996}. 
+%
+The use of these algorithms carries some advantages compared to area sources, 
+indeed, (1) they remove most of the unavoidable degree of subjectivity due to 
+the definition of the geometries and (2) they define a seismicity spatial 
+pattern that is, usually, more similar to reality. Nevertheless, some smoothing 
+algorithms require the a-priori definition of some setup parameters that expose 
+the calculation to a certain partiality level.
+
+Grid sources are modelled in OpenQuake simply as a set of 
+point sources. The next section describes the parameters required to 
+characterize a point source.
+%
+%  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+\paragraph{Parameters}
+%
+For each grid node:
+\begin{itemize}
+\item A location specified in terms of the $<$latitude,longitude$>$ tuple;
+\item Similarly to area sources, one (or many) combinations of the following objects:
+	\begin{itemize}
+	\item A discrete Frequency-Magnitude Distribution (FMD)
+	\item Strike, dip, and rake angles characterizing the seismicity specified 
+	in the associated FMD. 
+	\end{itemize}
+\item An array to specify the dependency on magnitude of the depth to the top of 
+	rupture. This array contains two columns and one or many 
+	$<$depth, magnitude$>$ tuples where each tuple specifies the depth to the 
+	top of rupture for magnitudes equal or greater than a specific value. 
+\item A value to indicate the hypocentral depth in case of punctual sources. The 
+	same convention specified for area sources applies here. 
+\end{itemize} 
+%
+%  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+\subsubsection{Simple faults}
+\index{Source type!fault!simple geometry} 
+\index{Simple fault|see{Source type}}
+%
+Simple Faults are the most common source type used to model faults; the 
+``simple'' adjective relates to the geometry description of the source 
+which is basically obtained by projecting a trace (i.e. a polyline) along a representative dip direction. 
+%
+%  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 
+\paragraph{Parameters}
+%
+\begin{itemize}
+\item A fault trace (usually a polyline); 
+\item A FMD;
+\item A representative value of the dip angle (specified according to the Aki-Richards convention; see \citet{aki2002});
+\item Rake angle (specified following the Aki-Richards convention; see \citet{aki2002}) 
+\item Upper and lower values of depth limiting the seismogenic interval 
+\item A boolean flag that specifies if the size of ruptures should follow a magnitude scaling relationship (currently specified in the calculation settings file) and be distributed homogeneously over the fault surface or it is accepted that ruptures within a given range of magnitudes (specified by the FMD) will always rupture the entire fault surface.
+\end{itemize}
+%
+%  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+\subsubsection{Complex faults}
+\index{Source type!fault!complex geometry}
+\index{Complex fault|see{Source type}}
+%
+Complex faults  differ from simple fault just by the way geometry is described and, consequently in the way the fault surface is created. The input parameters used to describe complex faults are, for the most part, the same used to describe the simple fault typology. In particular, in the case of complex faults the dip angle is not requested while the fault trace is substituted by two fault traces used to limit at top and bottom the fault surface. 
+%
+%  .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   .   . 
+\paragraph{Representation of complex faults}
+%
+Usually, we use complex faults to model intraplate megathrust faults such as the 
+big subduction structures active in the Pacific (Sumatra, South America, Japan).

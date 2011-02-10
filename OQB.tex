@@ -18,11 +18,10 @@
 \setcounter{tocdepth}{3}
 %
 \usepackage{pst-tree}
-\usepackage{pstricks}
+\usepackage{pstricks,pstricks-add,multido}
 
 \usepackage{geometry}
 \usepackage{moresize}
-
 %
 \usepackage{fancyvrb}
 %
@@ -102,9 +101,9 @@
 	[display] % shape
 	{\filleft\normalfont\sffamily} % format
 	{\textcolor{blue01}{\bfseries\MakeUppercase{\chaptertitlename}} % label
-		\hspace{4pt}\Huge\bfseries\textcolor{blue01}{\thechapter}} 
+		\hspace{4pt}\huge\bfseries\textcolor{blue01}{\thechapter}} 
 	{1pc} % sep
-	{\Huge\bfseries\textcolor{blue01}} % Before
+	{\huge\bfseries\textcolor{blue01}} % Before
 	[]
 % - - - - - - - - - - - - - - - - - - - - - - - - - Reformatting SECTION Titles
 % Titles: SECTION
@@ -245,8 +244,7 @@
 \chapter{OpenQuake input description}
 	\input{./Part_Hazard/unifiedSeismicSourceDescription.tex}
 % ------------------------------------------------------------------------------
-\chapter{The Source System and the creation of the Earthquake Rupture 
-	Forecast}
+\chapter{Processing the Source Model Logic Tree and the calculation of the Earthquake Rupture Forecast}
 	\label{chap:erf}
 	\input{./Part_Hazard/eqk_Rupture_Forecast_Calculator.tex}
 % ------------------------------------------------------------------------------
@@ -291,10 +289,12 @@
 % ------------------------------------------------------------------------- Part
 \part{Appendixes}
 \appendix
-\chapter{Example of OpenQuake hazard calculation configuration file}
-	\input{./Part_Appendix/appendixHazardInputExample.tex}
+% ------------------------------------------------------------------------------
+\chapter{nrML}
+	\input{./Part_Appendix/nrML.tex}
 % ------------------------------------------------------------------------------
 \chapter{Example of OpenQuake risk calculation configuration file}
+	\input{./Part_Appendix/appendixHazardInputExample.tex}
 % ==============================================================================
 % ----------------------------------------------------------------- Bibliography
 \bibliographystyle{apalike}
